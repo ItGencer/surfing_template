@@ -97,10 +97,32 @@ Marquee Warning Ticker
 Footer
 ```
 
+## Поточна задача: Hero first screen
+
+Джерело уточнення - скриншот `Screenshot 2026-07-03 155304.png`, де показано верхню частину першого екрана. Для цієї ітерації реалізується тільки top experience: screenshot-like header + Hero. Інші секції можуть існувати лише як anchor targets/заглушки для навігації, без повної верстки блоків.
+
+- Header у першій ітерації має точно підтримати референс: біла смуга приблизно `64px`, logo `Surfing` лівіше центру, desktop nav по центру, оранжева pill-кнопка `Contact Us` праворуч.
+- Hero розташовується одразу під header і займає решту першого екрану.
+- Hero повинен мати реальний bitmap-фон з хвилею/серфером у `src/assets/`, без зовнішнього URL.
+- Перший екран має працювати на desktop і mobile: nav collapse у hamburger, button залишається доступною у mobile menu.
+- Обов'язковий JS для цієї ітерації: scroll progress, mobile menu, smooth anchor scroll, hero chevron scroll.
+
+## Поточна задача: About block
+
+Джерело уточнення - скриншоти `Screenshot 2026-07-03 163140.png` і `Screenshot 2026-07-03 163156.png`, але локальні файли недоступні для читання в поточному середовищі. Для цієї ітерації About реалізується за наявною специфікацією нижче, без зміни Hero/Header.
+
+- About розміщується одразу після Hero і має реальний `section#about`, щоб header nav і hero chevron скролили до блоку.
+- Секція має білий фон, великий вертикальний відступ, центральний заголовок і двоколонковий content layout.
+- Ліворуч: rounded image з локального asset `src/assets/`, без зовнішніх URL.
+- Праворуч: два інформаційні блоки `About Us` і `Our Mission` з оранжевими outline-іконками, коротким текстом і видимими focus/hover станами тільки там, де є інтерактив.
+- Під основним content layout: три stat cards `120+`, `95%`, `30+` з іконками і підписами.
+- JS для цієї ітерації: count-up animation для stat values через `IntersectionObserver`, з fallback без анімації якщо observer недоступний або `prefers-reduced-motion`.
+- Mobile: одна колонка, фото над текстом, stat cards складаються в одну колонку; текст не має накладатися на зображення або картки.
+
 ## 1. Header
 
 - Sticky/fixed header.
-- Висота: `72-80px`.
+- Висота: `64px` для screenshot-like першого екрана; попередній діапазон `72-80px` лишається допустимим для майбутньої повної версії.
 - Білий фон.
 - Bottom border: `1px solid #ECECEC`.
 - Ліворуч logo:
@@ -111,21 +133,22 @@ Footer
 - Праворуч button `Contact Us`.
 - Під header: scroll progress bar висотою `4-5px`, оранжевий.
 
-Mobile behavior `to confirm`, рекомендовано: hamburger menu або compact nav.
+Mobile behavior для цієї ітерації: hamburger menu з `aria-expanded`, slide/dropdown panel під header, закриття після кліку по nav link або `Escape`.
 
 ## 2. Hero
 
 - Full-bleed background photo: ocean wave with surfer.
-- Height: `90-100vh`.
+- Height: `calc(100vh - 64px)` або мінімум `620px` на desktop; на mobile не менше `560px`.
 - Dark gradient overlay знизу для читабельності.
 - Centered H1: `SURF*ING`.
   - White.
-  - `96-130px` desktop.
+  - `96-130px` desktop або responsive `clamp()`.
   - Very bold.
   - Uppercase.
   - Tight letter spacing.
 - `*` - окремий оранжевий asterisk/star element.
 - Під H1 - оранжевий SVG scribble underline.
+- Додатковий eyebrow/label не потрібен, щоб Hero не виглядав як маркетингова заглушка.
 - Rating block closer to bottom:
   - 5 orange stars;
   - `4.9/5` white bold;
@@ -361,4 +384,3 @@ Mobile behavior `to confirm`, рекомендовано: hamburger menu або 
 - Real contact/enroll flow.
 - Footer author name and AI icons.
 - Whether final footer spelling is `SURF*ING` or `SURF*IING`.
-
