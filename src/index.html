@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surf * iing</title>
+    <title>Surfing Institute</title>
 </head>
 <body>
-    
+    <header class="site-header" data-header>
+        <div class="site-header__inner">
+            <a class="brand" href="#home" aria-label="Surfing home">
+                <span class="brand__mark" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="brand__name">Surfing</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="#about" data-nav-link>About</a>
+                <a href="#courses" data-nav-link>Courses</a>
+                <a href="#locations" data-nav-link>Locations</a>
+                <a href="#why-us" data-nav-link>Why Us</a>
+                <a href="#testimonials" data-nav-link>Testimonials</a>
+            </nav>
+
+            <a class="button site-header__contact" href="#contact">Contact Us</a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false" data-menu-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-nav-panel>
+            <a href="#about" data-nav-link>About</a>
+            <a href="#courses" data-nav-link>Courses</a>
+            <a href="#locations" data-nav-link>Locations</a>
+            <a href="#why-us" data-nav-link>Why Us</a>
+            <a href="#testimonials" data-nav-link>Testimonials</a>
+            <a class="button mobile-nav__contact" href="#contact">Contact Us</a>
+        </nav>
+
+        <div class="scroll-progress" aria-hidden="true">
+            <span data-scroll-progress></span>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+                <div class="hero__headline">
+                    <h1 class="hero__title" id="hero-title">
+                        SURF<span class="hero__asterisk" aria-hidden="true">*</span>ING
+                    </h1>
+                    <svg class="hero__scribble" viewBox="0 0 440 48" aria-hidden="true" focusable="false">
+                        <path d="M8 30C70 12 139 12 205 25C266 37 320 39 432 15" />
+                        <path d="M45 38C121 25 188 24 252 33C309 41 353 40 397 28" />
+                    </svg>
+                    <p class="hero__subtitle">Whether you're a beginner or chasing barrels, we've got the perfect wave for you.</p>
+                </div>
+
+                <div class="hero__rating" aria-label="Rated 4.9 out of 5">
+                    <span class="hero__stars" aria-hidden="true">★★★★★</span>
+                    <strong>4.9/5</strong>
+                    <span>Best Rated Surfing Institute</span>
+                </div>
+            </div>
+
+            <a class="hero__scroll" href="#about" aria-label="Scroll to next section" data-hero-scroll>
+                <span></span>
+            </a>
+        </section>
+
+        <div class="anchor-target" id="about" aria-hidden="true"></div>
+    </main>
 </body>
 </html>
