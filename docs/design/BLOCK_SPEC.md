@@ -1,0 +1,364 @@
+# Block Spec - Surfing Institute
+
+Оновлено: 2026-07-03.
+
+Це блокова специфікація сайту "Surfing Institute" для реалізації у `Surfing_template`. Джерело - доданий дизайн-промпт користувача.
+
+## Загальна стилістика
+
+- Тема: surf-школа / інститут серфінгу.
+- Візуальний ритм: full-bleed фото хвиль і серферів, потім контент-секція, потім знову full-bleed фото.
+- Настрій: сучасний, енергійний, спортивний.
+- Контраст: білий/чорний + один яскравий оранжевий акцент.
+- Контейнер: `max-width: 1200-1280px`, бокові відступи `24-40px`.
+- Desktop section padding: `96-120px` зверху і знизу.
+- Image radius: `16-20px`.
+- Card radius: `12px`.
+- Button radius: `999px`.
+- Тіні: мінімальні, переважно flat UI.
+
+## Design Tokens
+
+```css
+:root {
+  --color-accent: #f5621e;
+  --color-accent-strong: #ff6a00;
+  --color-text: #111111;
+  --color-muted: #6b6b6b;
+  --color-card: #f7f7f6;
+  --color-border: #e5e5e3;
+  --color-white: #ffffff;
+  --radius-card: 12px;
+  --radius-image: 16px;
+  --radius-pill: 999px;
+  --container: 1280px;
+  --font-display: "Archivo Black", "Anton", "Poppins", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-logo: "Space Mono", "JetBrains Mono", monospace;
+}
+```
+
+`to confirm`: точні шрифти і спосіб підключення.
+
+## Глобальні патерни
+
+### Section Header
+
+Повторюється перед великими секціями.
+
+- Маленький label: outline icon `~16px` + uppercase text `~13px`, оранжевий, centered.
+- H2: `48-64px`, жирний, чорний, sentence case.
+- Scribble underline: оранжевий SVG path під ключовим словом.
+- Subtitle: `16-18px`, сірий `#6B6B6B`, centered, `max-width ~600px`.
+
+### Full-Bleed Photo Divider
+
+- Фото на всю ширину viewport.
+- Без контейнера і тексту.
+- Висота залежить від секції: від великого banner до майже full-screen.
+- Фото має реально показувати хвилі, океан, серферів, дошки або пляж.
+
+### Buttons
+
+- Оранжевий фон.
+- Білий текст.
+- Pill shape.
+- Font weight `600`.
+- Єдині приклади: `Contact Us`, `Enroll Now`.
+
+### Cards
+
+- Світла база: `#F7F7F6`.
+- Radius `12px`.
+- Padding `24-32px`.
+- Мінімум тіней.
+
+### Brand Logo Text
+
+- `SURF*ING` у hero.
+- `SURF*IING` або `SURF*ING` у footer - spelling `to confirm`, бо в описі є обидва варіанти.
+- Asterisk замінюється оранжевим графічним символом.
+- Під словом - оранжевий scribble underline.
+
+## Структура сторінки
+
+```text
+Header
+Hero
+Marquee Warning Ticker
+About
+Courses
+Locations
+Process
+Gallery
+Testimonials
+FAQ
+Marquee Warning Ticker
+Footer
+```
+
+## 1. Header
+
+- Sticky/fixed header.
+- Висота: `72-80px`.
+- Білий фон.
+- Bottom border: `1px solid #ECECEC`.
+- Ліворуч logo:
+  - іконка з двох оранжевих паралелограмів;
+  - текст `Surfing` моноширинним шрифтом.
+- Навігація: `About`, `Courses`, `Locations`, `Why Us`, `Testimonials`.
+- Gap між nav items: `28-32px`.
+- Праворуч button `Contact Us`.
+- Під header: scroll progress bar висотою `4-5px`, оранжевий.
+
+Mobile behavior `to confirm`, рекомендовано: hamburger menu або compact nav.
+
+## 2. Hero
+
+- Full-bleed background photo: ocean wave with surfer.
+- Height: `90-100vh`.
+- Dark gradient overlay знизу для читабельності.
+- Centered H1: `SURF*ING`.
+  - White.
+  - `96-130px` desktop.
+  - Very bold.
+  - Uppercase.
+  - Tight letter spacing.
+- `*` - окремий оранжевий asterisk/star element.
+- Під H1 - оранжевий SVG scribble underline.
+- Rating block closer to bottom:
+  - 5 orange stars;
+  - `4.9/5` white bold;
+  - caption `Best Rated Surfing Institute`.
+- Subtitle:
+  - `Whether you're a beginner or chasing barrels, we've got the perfect wave for you.`
+  - White, centered, `20-24px`.
+- Bottom center: small chevron-down icon with subtle bounce.
+
+## 3. Marquee Warning Ticker
+
+- Full width orange strip.
+- Height: `60-70px`.
+- Infinite horizontal scroll.
+- White uppercase bold text `18-20px`.
+- Items repeat:
+  - fish outline icon;
+  - `WARNING`;
+  - triangle alert icon;
+  - `NO SWIMMING`;
+  - lifebuoy icon;
+  - `SHARK SIGHTED`.
+- Gap: `32-40px`.
+- Same component is reused before footer.
+
+## 4. About - Welcome to Surfing Institute
+
+- Section padding: `~100px 0`.
+- Heading:
+  - line 1: `Welcome to`, gray, normal weight, `~48px`;
+  - line 2: `Surfing Institute®`, black, bold, `~56px`;
+  - orange scribble under key word;
+  - `®` small orange superscript circle style.
+- Two-column content:
+  - Left: rounded photo of surfers in wave, width `~45%`.
+  - Right: content blocks `About Us` and `Our Mission`.
+  - Each block has orange outline icon, H3 `~22px`, gray paragraph `~15px`, line-height `1.6`.
+- Stats row:
+  - 3 cards.
+  - Background `#F7F7F6`.
+  - Icons: graduation cap, thumbs up, certificate.
+  - Values: `120+`, `95%`, `30+`.
+  - Labels: `Happy Students Taught`, `Student Satisfaction Rate`, `Certified Instructors`.
+
+## 5. Courses - Find Your Wave
+
+- Before section: full-bleed dynamic surf photo banner.
+- Section header:
+  - label `Courses`;
+  - title `Find Your Wave`;
+  - centered subtitle.
+- Course cards:
+  - One card per row, `max-width ~1080px`.
+  - Large image height `500-650px`, radius `16px`.
+  - White overlay card partly covers image.
+  - Overlay width `380-420px`, padding `~40px`, radius `12px`.
+  - Overlay positions alternate: bottom-left, right, center-right, etc.
+- Course examples:
+  - `Beginner Surfing Course`.
+  - `Intermediate Coaching Surf`.
+  - `Advanced Surfing Training`.
+  - `Kids & Teens Surf Camps`.
+- Inside overlay:
+  - H3 `~32px`;
+  - description `~15px`;
+  - meta line, for example `Duration: 5 Days | Equipment Included`;
+  - `Enroll Now` button;
+  - 5 orange stars;
+  - `Trusted by 221+ students`.
+
+## 6. Locations - Our Locations
+
+- Before section: full-bleed wave/splash photo banner.
+- Section header:
+  - label `Beaches`;
+  - title `Our Locations`;
+  - subtitle centered.
+- Grid:
+  - 2 columns desktop.
+  - Second column offset downward for masonry feel.
+  - Mobile: one column.
+- Card:
+  - Light gray frame/background.
+  - Radius `12px`, padding `~16px`.
+  - Photo top, radius `12px`, height `~280px`.
+  - Name `~24px` bold.
+  - Country code small uppercase superscript-style.
+  - Description `~14px`, gray, two lines.
+- Locations:
+  - Bali, Indonesia - `ID`.
+  - Byron Bay, Australia - `AU`.
+  - Goa, India - `IN`.
+  - Hossegor, France - `FR`.
+  - Santa Cruz, California, US - `US`.
+
+## 7. Process - Beach to Board
+
+- Before section: full-bleed surfer silhouette/wave banner.
+- Section header:
+  - label `Process`;
+  - title `Beach to Board`;
+  - subtitle `We make learning to surf easy, safe, and fun - no experience needed.`
+- Grid: 3 columns x 2 rows desktop.
+- Step card:
+  - Background `#F7F7F6`.
+  - Radius `12px`.
+  - Padding `~32px`.
+  - Top row: orange outline icon left, step number right `01-06`.
+  - H3 `~22px`.
+  - Description `~14px`.
+- Steps:
+  - `01` Awareness.
+  - `02` Familiarization.
+  - `03` Paddling.
+  - `04` Pop-Up.
+  - `05` Wave Reading.
+  - `06` Catch & Ride.
+
+## 8. Gallery - Meet Memories
+
+- Before section: full-bleed sky/cloud banner.
+- Section header:
+  - label `Photos`;
+  - title `Meet Memories`;
+  - subtitle `Snapshots of unforgettable rides and perfect waves.`
+- Masonry photo grid:
+  - 3 columns desktop.
+  - Mixed image heights: portrait, square, horizontal strips.
+  - Gap `~16px`.
+  - Radius `8-12px`.
+  - No captions.
+  - First row may look partially cropped to create seamless continuation from previous photo divider.
+- Content: surfers on boards, close-ups of boards, silhouettes, wave action.
+
+## 9. Testimonials - Riders' Words
+
+- Before section: full-bleed sky/person banner.
+- Section header:
+  - label `Testimonials`;
+  - title `Riders' Words`;
+  - subtitle `Real stories from students who've paddled out, stood up, and fallen in love with the waves.`
+- Grid:
+  - 3 columns x 2 rows desktop.
+  - Gap `~24px`.
+- Card variants:
+  - Light card: `#F7F7F6`, black text, orange quote icon.
+  - Photo card: background image with dark gradient, white text, white quote icon.
+- Card content:
+  - quote icon;
+  - quote `~16-18px`, bold, 2-3 lines;
+  - name `~15px`, bold;
+  - country + country code `~13px`;
+  - optional thumbnail at bottom, radius `8px`, height `130-150px`.
+- People:
+  - Diego, Brazil - `BR`.
+  - Sofia, Spain - `ES`.
+  - Jack, Australia - `AU`.
+  - Liam, USA - `US`.
+  - Emma, UK - `GB`.
+  - Priya, India - `IN`.
+
+## 10. FAQ - Got Questions?
+
+- Before section: full-bleed ocean/person-running-on-waves banner.
+- Section header:
+  - label `FAQs`;
+  - title `Got Questions?`;
+  - subtitle `Everything you need to know before you grab your board and hit the waves.`
+- Accordion:
+  - One column, `max-width ~900px`, centered.
+  - Item background `#F7F7F6`.
+  - Radius `12px`.
+  - Padding `24px 32px`.
+  - Gap `~16px`.
+  - Question text `~18px`, bold.
+  - Right button: orange circle `~32px`.
+  - Closed icon: `+`.
+  - Open icon: `x` or close icon.
+  - First item open by default.
+- Questions:
+  - `Do I need any surfing experience to join?`
+  - `What should I bring to my surf lesson?`
+  - `Are lessons safe for kids?`
+  - `Can I book private lessons?`
+  - `How long is a typical lesson?`
+
+## 11. Footer
+
+- Before footer: very tall full-bleed photo banner with shaka gesture, sand, sky, ocean.
+- Repeat Marquee Warning Ticker directly above footer.
+- Large decorative logo-title:
+  - `SURF*IING` or `SURF*ING` - `to confirm`.
+  - Black bold text.
+  - Orange asterisk/star.
+  - Orange scribble underline.
+- Footer nav:
+  - `About`;
+  - `Courses`;
+  - `Locations`;
+  - `Why Us`;
+  - `Testimonials`;
+  - `Instructors`;
+  - `Gallery`;
+  - `404`.
+- Divider line: `1px solid #ECECEC`.
+- Bottom attribution:
+  - Text: `Ask AI About [Ім'я автора]` - `to confirm`.
+  - 3 small AI-service style icons - exact icons `to confirm`.
+
+## Responsive Notes
+
+- Hero H1 must use responsive clamp so it never overflows mobile.
+- Desktop nav can collapse on mobile.
+- Course overlay cards should become normal stacked cards under images on narrow screens.
+- Locations, Process, Testimonials grids should collapse to one column on mobile.
+- Gallery can become 2 columns on tablet and 1 column on small mobile.
+- Section padding should shrink on mobile, for example `64-80px`.
+- Avoid text overlap with images, cards, ticker and footer logo.
+
+## Interaction Notes
+
+- Scroll progress bar reads current scroll position.
+- Header nav links should anchor to sections.
+- FAQ items toggle open/closed and update accessible state.
+- Marquee should respect `prefers-reduced-motion`.
+- Chevron in hero can smoothly scroll to About section.
+
+## Open Questions
+
+- Exact images and image licenses.
+- Exact font source.
+- Exact mobile navigation behavior.
+- Real contact/enroll flow.
+- Footer author name and AI icons.
+- Whether final footer spelling is `SURF*ING` or `SURF*IING`.
+
