@@ -15,6 +15,7 @@
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний About block.
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під Hero Marquee Warning Ticker.
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний Courses sticky stack block.
+- [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний Beaches / Locations block.
 
 ## Completed This Iteration - Hero
 
@@ -52,6 +53,16 @@
 - [x] Додати responsive fallback: на tablet/mobile панелі стають звичайними stacked cards без небезпечного накладання тексту.
 - [x] Підключити локальні WebP assets через Webpack import для Courses images без зовнішніх URL.
 
+
+## Completed This Iteration - Beaches / Locations
+
+- [x] Реалізувати `section#locations` з visual label `Beaches`, title `Our Locations`, subtitle і оранжевим scribble underline.
+- [x] Додати 5 location cards: Bali, Byron Bay, Goa, Hossegor, Santa Cruz.
+- [x] Зробити desktop masonry-like композицію: cards розкладені ліворуч/праворуч/по центру з великими вертикальними проміжками як на screenshots.
+- [x] Додати card styling: white card, subtle border, rounded image, large bold location title, inline country flag і muted description.
+- [x] Додати responsive fallback: одна колонка на tablet/mobile без negative overlap і горизонтального скролу.
+- [x] Підключити локальні WebP assets через Webpack imports для location images без зовнішніх URL.
+
 ## To Confirm
 
 - [ ] Підтвердити, чи наступний крок - повна верстка сайту в цьому Webpack-проєкті.
@@ -72,7 +83,7 @@
 - [ ] Реалізувати marquee warning ticker і повторити його перед footer. Hero ticker готовий; before-footer повтор ще в backlog.
 - [x] Реалізувати About секцію з фото, текстовими блоками і статистикою.
 - [x] Реалізувати Courses секцію з image + overlay card патерном і sticky stacked scroll behavior.
-- [ ] Реалізувати Locations masonry-like grid.
+- [x] Реалізувати Locations masonry-like grid.
 - [ ] Реалізувати Process grid `Beach to Board`.
 - [ ] Реалізувати Gallery masonry grid.
 - [ ] Реалізувати Testimonials grid з light/photo-card варіантами.

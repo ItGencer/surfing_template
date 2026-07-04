@@ -1,12 +1,28 @@
 import "./styles.scss";
-import heroImageUrl from "./assets/hero-surf-wave.webp";
-import aboutImageUrl from "./assets/about-surfers.webp";
+import heroImageUrl from "./assets/hero.jpg";
+import aboutImageUrl from "./assets/about.jpg";
 
-const courseImages = [aboutImageUrl, heroImageUrl, heroImageUrl, aboutImageUrl];
+import courseImages1 from "./assets/courseImages1.webp";
+import courseImages2 from "./assets/courseImages2.webp";
+import courseImages3 from "./assets/courseImages3.webp";
+import courseImages4 from "./assets/courseImages4.webp";
+
+import locationImages1 from "./assets/locationImages1.jpg";
+import locationImages2 from "./assets/locationImages2.webp";
+import locationImages3 from "./assets/locationImages3.webp";
+import locationImages4 from "./assets/locationImages4.jpg";
+import locationImages5 from "./assets/locationImages5.jpg";
+
+import surfingImageUrl from "./assets/surfing.webp";
+import surfingTwoImageUrl from "./assets/surfing_2.webp";
+
+const courseImages = [courseImages1, courseImages2, courseImages3, courseImages4];
+const locationImages = [locationImages1, locationImages2, locationImages3, locationImages4, locationImages5];
 
 const initImages = () => {
   const aboutImage = document.querySelector("[data-about-image]");
   const courseImageElements = document.querySelectorAll("[data-course-image]");
+  const locationImageElements = document.querySelectorAll("[data-location-image]");
 
   if (aboutImage) {
     aboutImage.src = aboutImageUrl;
@@ -14,6 +30,14 @@ const initImages = () => {
 
   courseImageElements.forEach((image) => {
     const imageUrl = courseImages[Number(image.dataset.courseImage || 0)];
+
+    if (imageUrl) {
+      image.src = imageUrl;
+    }
+  });
+
+  locationImageElements.forEach((image) => {
+    const imageUrl = locationImages[Number(image.dataset.locationImage || 0)];
 
     if (imageUrl) {
       image.src = imageUrl;
@@ -233,11 +257,53 @@ const initAboutStats = () => {
   statValues.forEach((element) => observer.observe(element));
 };
 
+const initLocationsHeaderPin = () => {
+  const section = document.querySelector(".locations");
+  const header = document.querySelector(".locations__header");
+  const grid = document.querySelector(".locations__grid");
+
+  if (!section || !header || !grid) {
+    return;
+  }
+
+  let isTicking = false;
+
+  const updateHeaderFade = () => {
+    if (window.innerWidth <= 900) {
+      section.style.setProperty("--locations-header-opacity", "1");
+      isTicking = false;
+      return;
+    }
+
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const gridTop = grid.getBoundingClientRect().top + window.scrollY;
+    const scrollStart = Math.max(sectionTop + 80, gridTop - window.innerHeight * 0.62);
+    const fadeDistance = Math.max(window.innerHeight * 0.58, 420);
+    const progress = Math.min(Math.max((window.scrollY - scrollStart) / fadeDistance, 0), 1);
+    const opacity = 1 - progress * 0.86;
+
+    section.style.setProperty("--locations-header-opacity", opacity.toFixed(3));
+    isTicking = false;
+  };
+
+  const requestHeaderFade = () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(updateHeaderFade);
+      isTicking = true;
+    }
+  };
+
+  window.addEventListener("scroll", requestHeaderFade, { passive: true });
+  window.addEventListener("resize", requestHeaderFade);
+  updateHeaderFade();
+};
+
 const initSurfingPage = () => {
   initImages();
   initHeroTicker();
   initSurfingHero();
   initAboutStats();
+  initLocationsHeaderPin();
 };
 
 if (document.readyState === "loading") {
@@ -251,4 +317,20 @@ if (imgAbout) {
   const aboutImageUrl = new URL("./assets/surfing.webp", import.meta.url).href;
 
   imgAbout.src = aboutImageUrl;
+}
+
+
+const imgAbout2 = document.querySelector(".locations__image");
+if (imgAbout2) {
+  const aboutImageUrl = new URL("./assets/surfing-3.jpg", import.meta.url).href;
+
+  imgAbout2.src = aboutImageUrl;
+}
+
+
+const imgAbout3 = document.querySelector(".course__image");
+if (imgAbout3) {
+  const aboutImageUrl = new URL("./assets/surfing_2.webp", import.meta.url).href;
+
+  imgAbout3.src = aboutImageUrl;
 }

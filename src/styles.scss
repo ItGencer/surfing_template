@@ -32,6 +32,10 @@ html {
   scroll-behavior: smooth;
 }
 
+img{
+  width: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -278,7 +282,7 @@ a:focus-visible {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.18) 38%, rgba(0, 0, 0, 0.72) 100%),
     linear-gradient(90deg, rgba(0, 0, 0, 0.46) 0%, transparent 46%, rgba(0, 0, 0, 0.26) 100%),
-    url("./assets/hero-surf-wave.webp") center center / cover no-repeat;
+    url("./assets/hero.jpg") center center / cover no-repeat;
 }
 
 .hero::after {
@@ -471,7 +475,7 @@ a:focus-visible {
 
 .about {
   scroll-margin-top: var(--header-height);
-  padding: 108px 0 112px;
+  padding: 108px 0 0;
   background: var(--color-white);
 }
 
@@ -662,11 +666,6 @@ a:focus-visible {
   margin-top: 28px;
 }
 
-
-.about__image{
-  width: 100%;
-}
-
 .stat-card {
   min-height: 196px;
   display: grid;
@@ -697,7 +696,7 @@ a:focus-visible {
 
 .courses {
   scroll-margin-top: var(--header-height);
-  padding: 110px 0 140px;
+  padding: 110px 0 0;
   background: var(--color-white);
 }
 
@@ -790,7 +789,6 @@ a:focus-visible {
 .courses__stack {
   max-width: 1100px;
   margin: 0 auto;
-  padding-bottom: 34vh;
 }
 
 .course-panel {
@@ -808,7 +806,7 @@ a:focus-visible {
 }
 
 .course-panel + .course-panel {
-  margin-top: 5px;
+  margin: 45px 0;
 }
 
 .course-panel__image {
@@ -895,6 +893,187 @@ a:focus-visible {
   font-size: 15px;
 }
 
+
+.locations {
+  --locations-header-opacity: 1;
+  scroll-margin-top: var(--header-height);
+  padding: 116px 0 0;
+  background: var(--color-white);
+  overflow: visible;
+}
+
+.locations__inner {
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.locations__header {
+  position: sticky;
+  top: calc(var(--header-height) + 28px);
+  z-index: 0;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: var(--locations-header-opacity);
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.locations__kicker {
+  margin-bottom: 18px;
+  text-transform: none;
+  font-size: 16px;
+}
+
+.locations__kicker-icon {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.locations__kicker-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.locations__kicker-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.locations__title {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(4.4rem, 8vw, 7.15rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.locations__scribble {
+  position: absolute;
+  z-index: -1;
+  left: 10%;
+  bottom: -0.33em;
+  width: min(390px, 38vw);
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.locations__scribble path {
+  fill: none;
+  stroke: var(--color-accent-strong);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.locations__subtitle {
+  max-width: 680px;
+  margin: 26px auto 0;
+  color: var(--color-muted);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.locations__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: clamp(28px, 6vw, 72px);
+  row-gap: 136px;
+  margin:45px 0;
+  padding-top: 210px;
+}
+
+.location-card {
+  position: relative;
+  z-index: 2;
+  padding: 20px 20px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 12px 34px rgba(17, 17, 17, 0.035);
+}
+
+.location-card--bali {
+  grid-column: 1 / span 5;
+  margin-top: 0;
+}
+
+.location-card--byron {
+  grid-column: 8 / span 5;
+  margin-top: 140px;
+}
+
+.location-card--goa {
+  grid-column: 5 / span 5;
+  margin-top: 0;
+}
+
+.location-card--hossegor {
+  grid-column: 1 / span 5;
+  margin-top: 42px;
+}
+
+.location-card--santa-cruz {
+  grid-column: 8 / span 5;
+  margin-top: -16px;
+}
+
+.location-card__image {
+  width: 100%;
+  height: clamp(280px, 28vw, 360px);
+  display: block;
+  border-radius: 9px;
+  object-fit: cover;
+  background: var(--color-card);
+}
+
+.location-card h3 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 14px;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.35vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.location-card h3 span {
+  font-family: var(--font-body);
+  font-size: 0.88em;
+  line-height: 1;
+}
+
+.location-card p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 @keyframes hero-bounce {
   0%,
   100% {
@@ -913,6 +1092,52 @@ a:focus-visible {
 }
 
 @media (max-width: 900px) {
+  .locations {
+    padding: 86px 0 94px;
+  }
+
+  .locations__inner {
+    width: calc(100% - 32px);
+  }
+
+  .locations__title {
+    font-size: clamp(3.15rem, 12vw, 5.3rem);
+  }
+
+  .locations__scribble {
+    left: 7%;
+    width: min(330px, 50vw);
+  }
+
+  .locations__header {
+    position: relative;
+    top: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .locations__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 46px;
+    padding-top: 0;
+  }
+
+  .location-card,
+  .location-card--bali,
+  .location-card--byron,
+  .location-card--goa,
+  .location-card--hossegor,
+  .location-card--santa-cruz {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  .location-card__image {
+    height: clamp(260px, 58vw, 440px);
+  }
+
   .courses {
     padding: 84px 0 92px;
   }
@@ -1033,6 +1258,37 @@ a:focus-visible {
 }
 
 @media (max-width: 520px) {
+  .locations__title {
+    font-size: clamp(2.55rem, 13vw, 3.35rem);
+  }
+
+  .locations__scribble {
+    bottom: -0.38em;
+    width: min(240px, 62vw);
+  }
+
+  .locations__subtitle {
+    margin-top: 22px;
+    font-size: 16px;
+  }
+
+  .location-card {
+    padding: 14px 14px 20px;
+  }
+
+  .location-card__image {
+    height: clamp(220px, 62vw, 320px);
+  }
+
+  .location-card h3 {
+    margin-top: 20px;
+    font-size: clamp(1.65rem, 8vw, 2.1rem);
+  }
+
+  .location-card p {
+    font-size: 15px;
+  }
+
   .courses__title {
     font-size: clamp(2.65rem, 14vw, 3.5rem);
   }
