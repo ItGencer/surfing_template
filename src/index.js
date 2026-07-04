@@ -1,4 +1,52 @@
 import "./styles.scss";
+import aboutImageUrl from "./assets/about-surfers.webp";
+
+const initImages = () => {
+  const aboutImage = document.querySelector("[data-about-image]");
+
+  if (aboutImage) {
+    aboutImage.src = aboutImageUrl;
+  }
+};
+
+const initHeroTicker = () => {
+  const track = document.querySelector("[data-hero-ticker-track]");
+  const group = document.querySelector("[data-hero-ticker-group]");
+
+  if (!track || !group) {
+    return;
+  }
+
+  if (!track.querySelector("[data-hero-ticker-clone]")) {
+    const clone = group.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.dataset.heroTickerClone = "true";
+    track.appendChild(clone);
+  }
+
+  let isResizeTicking = false;
+
+  const updateTicker = () => {
+    const groupWidth = group.getBoundingClientRect().width;
+
+    if (groupWidth > 0) {
+      track.style.setProperty("--ticker-offset", `-${groupWidth}px`);
+      track.style.setProperty("--ticker-duration", `${Math.max(groupWidth / 85, 18).toFixed(2)}s`);
+    }
+
+    isResizeTicking = false;
+  };
+
+  const requestTickerUpdate = () => {
+    if (!isResizeTicking) {
+      window.requestAnimationFrame(updateTicker);
+      isResizeTicking = true;
+    }
+  };
+
+  window.addEventListener("resize", requestTickerUpdate);
+  updateTicker();
+};
 
 const initSurfingHero = () => {
   const header = document.querySelector("[data-header]");
@@ -105,8 +153,83 @@ const initSurfingHero = () => {
   updateScrollState();
 };
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initSurfingHero);
-} else {
+const initAboutStats = () => {
+  const statValues = document.querySelectorAll("[data-stat-value]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (!statValues.length) {
+    return;
+  }
+
+  const setFinalValue = (element) => {
+    element.textContent = `${element.dataset.count}${element.dataset.suffix || ""}`;
+  };
+
+  const animateValue = (element) => {
+    const target = Number(element.dataset.count || 0);
+    const suffix = element.dataset.suffix || "";
+    const duration = 900;
+    const startTime = performance.now();
+
+    const update = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+
+      element.textContent = `${current}${suffix}`;
+
+      if (progress < 1) {
+        window.requestAnimationFrame(update);
+      }
+    };
+
+    window.requestAnimationFrame(update);
+  };
+
+  const revealValue = (element) => {
+    if (element.dataset.countStarted === "true") {
+      return;
+    }
+
+    element.dataset.countStarted = "true";
+
+    if (reducedMotion.matches) {
+      setFinalValue(element);
+      return;
+    }
+
+    animateValue(element);
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    statValues.forEach(setFinalValue);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          revealValue(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.45 },
+  );
+
+  statValues.forEach((element) => observer.observe(element));
+};
+
+const initSurfingPage = () => {
+  initImages();
+  initHeroTicker();
   initSurfingHero();
+  initAboutStats();
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSurfingPage);
+} else {
+  initSurfingPage();
 }

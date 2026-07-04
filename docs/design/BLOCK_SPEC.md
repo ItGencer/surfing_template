@@ -119,6 +119,24 @@ Footer
 - JS для цієї ітерації: count-up animation для stat values через `IntersectionObserver`, з fallback без анімації якщо observer недоступний або `prefers-reduced-motion`.
 - Mobile: одна колонка, фото над текстом, stat cards складаються в одну колонку; текст не має накладатися на зображення або картки.
 
+## Поточна задача: Hero Marquee Warning Ticker
+
+Джерело уточнення - скриншоти `Screenshot 2026-07-03 165804.png` і `Screenshot 2026-07-03 165817.png`.
+
+- Marquee реалізується як нижня частина `section class="hero" aria-labelledby="hero-title"`, а не окрема секція після Hero.
+- Візуально ticker стоїть між Hero image і About: full-width orange strip, без контейнера, одразу перед білим фоном About.
+- Height: `72-82px` desktop, `60-68px` mobile.
+- Background: `#ff4b00` або `--color-accent-strong`.
+- Text: білий, uppercase, heavy/bold, `24-28px` desktop, `18-22px` mobile, без letter-spacing.
+- Поряд із текстом використовувати inline SVG outline icons білого кольору:
+  - lifebuoy icon + `SHARK SIGHTED`;
+  - fish/rocket-like shark icon + `WARNING`;
+  - warning triangle icon + `NO SWIMMING`.
+- Text order repeats exactly: `SHARK SIGHTED`, `WARNING`, `NO SWIMMING`.
+- Animation: seamless horizontal loop, no empty gaps, no layout shift.
+- JS для цієї ітерації: clone ticker group for seamless loop, set `aria-hidden` on cloned group, calculate animation duration from content width.
+- Accessibility: visible text may repeat, but cloned moving copy must be `aria-hidden`; animation must stop for `prefers-reduced-motion`.
+
 ## 1. Header
 
 - Sticky/fixed header.
@@ -173,6 +191,7 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
   - `SHARK SIGHTED`.
 - Gap: `32-40px`.
 - Same component is reused before footer.
+- First implementation note: the first ticker is embedded at the bottom of Hero as `.hero-ticker`; the before-footer reuse remains in backlog.
 
 ## 4. About - Welcome to Surfing Institute
 
