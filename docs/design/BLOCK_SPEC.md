@@ -1,6 +1,6 @@
 # Block Spec - Surfing Institute
 
-Оновлено: 2026-07-03.
+Оновлено: 2026-07-04.
 
 Це блокова специфікація сайту "Surfing Institute" для реалізації у `Surfing_template`. Джерело - доданий дизайн-промпт користувача.
 
@@ -249,30 +249,48 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
 
 - See current task above for the implemented sticky stack behavior.
 
+## Поточна задача: Beaches / Locations block
+
+Джерело уточнення - скриншоти користувача з Beaches block. Для цієї ітерації реалізується Locations section з візуальним label `Beaches`, без зміни Header/Hero/About/Courses.
+
+- Секція має `section#locations`, щоб існуючий nav link `Locations` працював без зміни header.
+- Візуальний header:
+  - label `Beaches` з маленькою outline palm/beach icon, centered, оранжевий;
+  - title `Our Locations`, дуже великий чорний, centered;
+  - orange scribble stroke під словом/центром title, частково перетинає літери;
+  - subtitle: `We run sessions in some of the world's most iconic surf spots`.
+- Header має бути візуально під grid у проміжних scroll станах: cards можуть заходити поверх title/subtitle, як на screenshots. Для цього grid має negative top overlap і cards мають більший stacking layer.
+- Layout desktop:
+  - широкий контейнер `max-width ~1200px`;
+  - masonry-like композиція з 5 cards;
+  - Bali card зліва високо;
+  - Byron Bay card справа зі зміщенням вниз;
+  - Goa card centered нижче;
+  - Hossegor card зліва нижче;
+  - Santa Cruz card справа, приблизно навпроти Hossegor;
+  - великі вертикальні проміжки між рядами, багато білого простору.
+- Card style:
+  - white/light card with `1px` border `#ECECEC`, radius `12px`, padding `20px` desktop;
+  - image top, radius `8-10px`, height `300-360px`, `object-fit: cover`;
+  - H3 `~28-34px`, display font, black;
+  - country flag/emoji inline after title, `~28px`;
+  - description muted, `16-18px`, line-height `1.45`;
+  - flat/minimal shadow only if needed.
+- Locations content:
+  - `Bali, Indonesia` + `🇮🇩`;
+  - `Byron Bay, Australia` + `🇦🇺`;
+  - `Goa, India` + `🇮🇳`;
+  - `Hossegor, France` + `🇫🇷`;
+  - `Santa Cruz, California` + `🇺🇸`.
+- Responsive:
+  - tablet/mobile collapses to one column;
+  - no negative overlap on narrow screens;
+  - images keep stable aspect ratio;
+  - cards and title must not create horizontal scroll.
+
 ## 6. Locations - Our Locations
 
-- Before section: full-bleed wave/splash photo banner.
-- Section header:
-  - label `Beaches`;
-  - title `Our Locations`;
-  - subtitle centered.
-- Grid:
-  - 2 columns desktop.
-  - Second column offset downward for masonry feel.
-  - Mobile: one column.
-- Card:
-  - Light gray frame/background.
-  - Radius `12px`, padding `~16px`.
-  - Photo top, radius `12px`, height `~280px`.
-  - Name `~24px` bold.
-  - Country code small uppercase superscript-style.
-  - Description `~14px`, gray, two lines.
-- Locations:
-  - Bali, Indonesia - `ID`.
-  - Byron Bay, Australia - `AU`.
-  - Goa, India - `IN`.
-  - Hossegor, France - `FR`.
-  - Santa Cruz, California, US - `US`.
+- See current task above for the implemented Beaches/Locations block behavior.
 
 ## 7. Process - Beach to Board
 
