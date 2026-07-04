@@ -212,31 +212,42 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
   - Values: `120+`, `95%`, `30+`.
   - Labels: `Happy Students Taught`, `Student Satisfaction Rate`, `Certified Instructors`.
 
-## 5. Courses - Find Your Wave
+## Поточна задача: Courses sticky stack
 
-- Before section: full-bleed dynamic surf photo banner.
+Джерело уточнення - скриншоти користувача з Courses block. Для цієї ітерації реалізується тільки Courses після About, без зміни інших наступних секцій.
+
+- Courses розміщується після About і має real `section#courses`, щоб header nav скролив до блоку.
 - Section header:
-  - label `Courses`;
+  - label `Courses` з маленькою outline-іконкою в оранжевому кольорі;
   - title `Find Your Wave`;
-  - centered subtitle.
-- Course cards:
-  - One card per row, `max-width ~1080px`.
-  - Large image height `500-650px`, radius `16px`.
-  - White overlay card partly covers image.
-  - Overlay width `380-420px`, padding `~40px`, radius `12px`.
-  - Overlay positions alternate: bottom-left, right, center-right, etc.
+  - оранжевий scribble stroke проходить під словом `Wave` і частково перетинає title, як у референсі;
+  - centered subtitle: `To inspire surfers to connect with the ocean through fun, safe, and high-quality instruction.`
+- Course stack:
+  - 4 великі image panels у центральному контейнері `max-width ~1100px`;
+  - panel height desktop `560-620px`, radius `12-16px`;
+  - кожна panel має `position: sticky` і зупиняється під sticky header біля верху viewport;
+  - наступна panel має більший `z-index` і під час скролу наїжджає поверх попередньої;
+  - вертикальний overlap між panels приблизно `-240px` desktop, щоб у проміжних станах було видно складання блоків один на одного;
+  - останній panel має додатковий bottom spacer, щоб sticky state міг дограти перед наступною секцією.
+- Overlay card:
+  - біла картка поверх фото, width `420-480px`, padding `36-44px`, radius `12px`;
+  - позиції чергуються як у screenshots: beginner left, intermediate right, advanced left, kids right;
+  - на desktop overlay не виходить за межі image panel;
+  - mobile: overlay стає нижнім content block всередині panel, image лишається зверху, sticky overlap вимикається або сильно зменшується, щоб текст не перекривався.
 - Course examples:
-  - `Beginner Surfing Course`.
-  - `Intermediate Coaching Surf`.
-  - `Advanced Surfing Training`.
+  - `Beginner Surfing Course`;
+  - `Intermediate Coaching Surf`;
+  - `Advanced Surfing Training`;
   - `Kids & Teens Surf Camps`.
 - Inside overlay:
-  - H3 `~32px`;
-  - description `~15px`;
+  - H3 `~40-48px` desktop;
+  - description `~16px`, muted;
   - meta line, for example `Duration: 5 Days | Equipment Included`;
-  - `Enroll Now` button;
-  - 5 orange stars;
-  - `Trusted by 221+ students`.
+  - bottom row with `Enroll Now` pill button, 5 orange stars and `Trusted by ... students`.
+
+## 5. Courses - Find Your Wave
+
+- See current task above for the implemented sticky stack behavior.
 
 ## 6. Locations - Our Locations
 

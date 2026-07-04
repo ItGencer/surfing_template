@@ -1,12 +1,24 @@
 import "./styles.scss";
+import heroImageUrl from "./assets/hero-surf-wave.webp";
 import aboutImageUrl from "./assets/about-surfers.webp";
+
+const courseImages = [aboutImageUrl, heroImageUrl, heroImageUrl, aboutImageUrl];
 
 const initImages = () => {
   const aboutImage = document.querySelector("[data-about-image]");
+  const courseImageElements = document.querySelectorAll("[data-course-image]");
 
   if (aboutImage) {
     aboutImage.src = aboutImageUrl;
   }
+
+  courseImageElements.forEach((image) => {
+    const imageUrl = courseImages[Number(image.dataset.courseImage || 0)];
+
+    if (imageUrl) {
+      image.src = imageUrl;
+    }
+  });
 };
 
 const initHeroTicker = () => {
@@ -232,4 +244,11 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initSurfingPage);
 } else {
   initSurfingPage();
+}
+
+const imgAbout = document.querySelector(".about__image");
+if (imgAbout) {
+  const aboutImageUrl = new URL("./assets/surfing.webp", import.meta.url).href;
+
+  imgAbout.src = aboutImageUrl;
 }

@@ -1,6 +1,6 @@
 # Tasks
 
-Оновлено: 2026-07-03.
+Оновлено: 2026-07-04.
 
 ## Documentation
 
@@ -14,6 +14,7 @@
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під поточну Hero first screen і screenshot-like header.
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний About block.
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під Hero Marquee Warning Ticker.
+- [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний Courses sticky stack block.
 
 ## Completed This Iteration - Hero
 
@@ -41,6 +42,16 @@
 - [x] Додати JS для клонування ticker group і розрахунку animation duration.
 - [x] Додати QA screenshots: `docs/design/references/hero-ticker-desktop-qa.png`, `docs/design/references/hero-ticker-mobile-qa.png`.
 
+
+## Completed This Iteration - Courses
+
+- [x] Реалізувати `section#courses` з header `Courses` / `Find Your Wave` і оранжевим scribble underline.
+- [x] Додати 4 course panels: Beginner, Intermediate, Advanced, Kids & Teens.
+- [x] Реалізувати sticky stacked scroll behavior: panel зупиняється під header, наступний panel наїжджає поверх попереднього через `position: sticky`, negative overlap і z-index.
+- [x] Додати overlay course cards з `Enroll Now`, meta line, 5 stars і trusted students text.
+- [x] Додати responsive fallback: на tablet/mobile панелі стають звичайними stacked cards без небезпечного накладання тексту.
+- [x] Підключити локальні WebP assets через Webpack import для Courses images без зовнішніх URL.
+
 ## To Confirm
 
 - [ ] Підтвердити, чи наступний крок - повна верстка сайту в цьому Webpack-проєкті.
@@ -60,7 +71,7 @@
 - [x] Реалізувати hero `SURF*ING` з оранжевим asterisk і scribble underline.
 - [ ] Реалізувати marquee warning ticker і повторити його перед footer. Hero ticker готовий; before-footer повтор ще в backlog.
 - [x] Реалізувати About секцію з фото, текстовими блоками і статистикою.
-- [ ] Реалізувати Courses секцію з image + overlay card патерном.
+- [x] Реалізувати Courses секцію з image + overlay card патерном і sticky stacked scroll behavior.
 - [ ] Реалізувати Locations masonry-like grid.
 - [ ] Реалізувати Process grid `Beach to Board`.
 - [ ] Реалізувати Gallery masonry grid.
@@ -73,6 +84,7 @@
 ## Quality Checklist
 
 - [ ] `npm run build` проходить без помилок.
+- [ ] `npm run build` не виконано в Codex-середовищі: `node`/`npm` відсутні у PATH.
 - [x] Локальний production build через `.\node_modules\.bin\webpack.cmd --mode production` проходить без помилок.
 - [ ] `npm start` відкриває сторінку на `http://localhost:3000`.
 - [x] Dev server через `.\node_modules\.bin\webpack.cmd serve --mode development --host 127.0.0.1 --no-open` відкриває сторінку на `http://127.0.0.1:3000`.
