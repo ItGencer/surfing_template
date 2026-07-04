@@ -119,6 +119,24 @@ Footer
 - JS для цієї ітерації: count-up animation для stat values через `IntersectionObserver`, з fallback без анімації якщо observer недоступний або `prefers-reduced-motion`.
 - Mobile: одна колонка, фото над текстом, stat cards складаються в одну колонку; текст не має накладатися на зображення або картки.
 
+## Поточна задача: Hero Marquee Warning Ticker
+
+Джерело уточнення - скриншоти `Screenshot 2026-07-03 165804.png` і `Screenshot 2026-07-03 165817.png`.
+
+- Marquee реалізується як нижня частина `section class="hero" aria-labelledby="hero-title"`, а не окрема секція після Hero.
+- Візуально ticker стоїть між Hero image і About: full-width orange strip, без контейнера, одразу перед білим фоном About.
+- Height: `72-82px` desktop, `60-68px` mobile.
+- Background: `#ff4b00` або `--color-accent-strong`.
+- Text: білий, uppercase, heavy/bold, `24-28px` desktop, `18-22px` mobile, без letter-spacing.
+- Поряд із текстом використовувати inline SVG outline icons білого кольору:
+  - lifebuoy icon + `SHARK SIGHTED`;
+  - fish/rocket-like shark icon + `WARNING`;
+  - warning triangle icon + `NO SWIMMING`.
+- Text order repeats exactly: `SHARK SIGHTED`, `WARNING`, `NO SWIMMING`.
+- Animation: seamless horizontal loop, no empty gaps, no layout shift.
+- JS для цієї ітерації: clone ticker group for seamless loop, set `aria-hidden` on cloned group, calculate animation duration from content width.
+- Accessibility: visible text may repeat, but cloned moving copy must be `aria-hidden`; animation must stop for `prefers-reduced-motion`.
+
 ## 1. Header
 
 - Sticky/fixed header.
@@ -173,6 +191,7 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
   - `SHARK SIGHTED`.
 - Gap: `32-40px`.
 - Same component is reused before footer.
+- First implementation note: the first ticker is embedded at the bottom of Hero as `.hero-ticker`; the before-footer reuse remains in backlog.
 
 ## 4. About - Welcome to Surfing Institute
 
@@ -193,31 +212,42 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
   - Values: `120+`, `95%`, `30+`.
   - Labels: `Happy Students Taught`, `Student Satisfaction Rate`, `Certified Instructors`.
 
-## 5. Courses - Find Your Wave
+## Поточна задача: Courses sticky stack
 
-- Before section: full-bleed dynamic surf photo banner.
+Джерело уточнення - скриншоти користувача з Courses block. Для цієї ітерації реалізується тільки Courses після About, без зміни інших наступних секцій.
+
+- Courses розміщується після About і має real `section#courses`, щоб header nav скролив до блоку.
 - Section header:
-  - label `Courses`;
+  - label `Courses` з маленькою outline-іконкою в оранжевому кольорі;
   - title `Find Your Wave`;
-  - centered subtitle.
-- Course cards:
-  - One card per row, `max-width ~1080px`.
-  - Large image height `500-650px`, radius `16px`.
-  - White overlay card partly covers image.
-  - Overlay width `380-420px`, padding `~40px`, radius `12px`.
-  - Overlay positions alternate: bottom-left, right, center-right, etc.
+  - оранжевий scribble stroke проходить під словом `Wave` і частково перетинає title, як у референсі;
+  - centered subtitle: `To inspire surfers to connect with the ocean through fun, safe, and high-quality instruction.`
+- Course stack:
+  - 4 великі image panels у центральному контейнері `max-width ~1100px`;
+  - panel height desktop `560-620px`, radius `12-16px`;
+  - кожна panel має `position: sticky` і зупиняється під sticky header біля верху viewport;
+  - наступна panel має більший `z-index` і під час скролу наїжджає поверх попередньої;
+  - вертикальний overlap між panels приблизно `-240px` desktop, щоб у проміжних станах було видно складання блоків один на одного;
+  - останній panel має додатковий bottom spacer, щоб sticky state міг дограти перед наступною секцією.
+- Overlay card:
+  - біла картка поверх фото, width `420-480px`, padding `36-44px`, radius `12px`;
+  - позиції чергуються як у screenshots: beginner left, intermediate right, advanced left, kids right;
+  - на desktop overlay не виходить за межі image panel;
+  - mobile: overlay стає нижнім content block всередині panel, image лишається зверху, sticky overlap вимикається або сильно зменшується, щоб текст не перекривався.
 - Course examples:
-  - `Beginner Surfing Course`.
-  - `Intermediate Coaching Surf`.
-  - `Advanced Surfing Training`.
+  - `Beginner Surfing Course`;
+  - `Intermediate Coaching Surf`;
+  - `Advanced Surfing Training`;
   - `Kids & Teens Surf Camps`.
 - Inside overlay:
-  - H3 `~32px`;
-  - description `~15px`;
+  - H3 `~40-48px` desktop;
+  - description `~16px`, muted;
   - meta line, for example `Duration: 5 Days | Equipment Included`;
-  - `Enroll Now` button;
-  - 5 orange stars;
-  - `Trusted by 221+ students`.
+  - bottom row with `Enroll Now` pill button, 5 orange stars and `Trusted by ... students`.
+
+## 5. Courses - Find Your Wave
+
+- See current task above for the implemented sticky stack behavior.
 
 ## 6. Locations - Our Locations
 
