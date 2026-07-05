@@ -19,12 +19,14 @@ import surfingThreeImageUrl from "./assets/surfing_3.webp";
 const courseImages = [courseImages1, courseImages2, courseImages3, courseImages4];
 const locationImages = [locationImages1, locationImages2, locationImages3, locationImages4, locationImages5];
 const galleryImages = [aboutImageUrl, locationImages1, locationImages2, locationImages3, surfingImageUrl, surfingTwoImageUrl, surfingThreeImageUrl];
+const testimonialImages = [courseImages3, surfingThreeImageUrl, courseImages1, locationImages5, courseImages2, locationImages2];
 
 const initImages = () => {
   const aboutImage = document.querySelector("[data-about-image]");
   const courseImageElements = document.querySelectorAll("[data-course-image]");
   const locationImageElements = document.querySelectorAll("[data-location-image]");
   const galleryImageElements = document.querySelectorAll("[data-gallery-image]");
+  const testimonialImageElements = document.querySelectorAll("[data-testimonial-image]");
 
   if (aboutImage) {
     aboutImage.src = aboutImageUrl;
@@ -49,6 +51,15 @@ const initImages = () => {
   galleryImageElements.forEach((image) => {
     const index = Number(image.dataset.galleryImage || 0);
     const imageUrl = galleryImages[index];
+
+    if (imageUrl) {
+      image.src = imageUrl;
+    }
+  });
+
+  testimonialImageElements.forEach((image) => {
+    const index = Number(image.dataset.testimonialImage || 0);
+    const imageUrl = testimonialImages[index];
 
     if (imageUrl) {
       image.src = imageUrl;
@@ -360,4 +371,12 @@ if (imgAbout5) {
   const aboutImageUrl = new URL("./assets/surfing_3.webp", import.meta.url).href;
 
   imgAbout5.src = aboutImageUrl;
+}
+
+
+const imgAbout6 = document.querySelector(".testimonial-card__image");
+if (imgAbout6) {
+  const aboutImageUrl = new URL("./assets/surfing-4.jpg", import.meta.url).href;
+
+  imgAbout6.src = aboutImageUrl;
 }
