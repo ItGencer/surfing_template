@@ -378,26 +378,25 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
 
 ## 10. FAQ - Got Questions?
 
-- Before section: full-bleed ocean/person-running-on-waves banner.
 - Section header:
   - label `FAQs`;
   - title `Got Questions?`;
   - subtitle `Everything you need to know before you grab your board and hit the waves.`
-- Accordion:
+- Accordion layout:
   - One column, `max-width ~900px`, centered.
-  - Item background `#F7F7F6`.
-  - Radius `12px`.
-  - Padding `24px 32px`.
-  - Gap `~16px`.
-  - Question text `~18px`, bold.
-  - Right button: orange circle `~32px`.
-  - Closed icon: `+`.
-  - Open icon: `x` or close icon.
-  - First item open by default.
-- Questions:
-  - `Do I need any surfing experience to join?`
-  - `What should I bring to my surf lesson?`
-  - `Are lessons safe for kids?`
+  - Each item uses a light card background `#F7F7F6` with a `12px` radius.
+  - Question text uses `18px`, bold, with a right-side toggle icon.
+  - The closed state shows a `+` SVG icon and the open state switches to a `−` SVG icon.
+  - The first item is open by default.
+- Content copy:
+  - `Do I need any surfing experience to join?` → `Not at all! We welcome complete beginners and will guide you from your very first paddle to riding waves confidently.`
+  - `What should I bring to my surf lesson?` → `We provide boards and wetsuits. Just bring swimwear, sunscreen, a towel, and plenty of enthusiasm.`
+  - `Are lessons safe for kids?` → `Yes! We offer specially designed sessions for children, with extra safety measures and small student-to-instructor ratios.`
+  - `Can I book private lessons?` → `Absolutely. We offer both group and private coaching for individuals, friends, or families who want a personalized experience.`
+  - `How long is a typical lesson?` → `Most sessions run for about 2 hours, giving you plenty of time to learn, practice, and have fun in the water.`
+- Interaction:
+  - Clicking a question toggles the answer open and closed.
+  - The button updates `aria-expanded` and the icon state for accessibility.
   - `Can I book private lessons?`
   - `How long is a typical lesson?`
 

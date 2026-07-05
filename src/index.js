@@ -320,12 +320,59 @@ const initLocationsHeaderPin = () => {
   updateHeaderFade();
 };
 
+const initFaqAccordion = () => {
+  const items = document.querySelectorAll("[data-faq-item]");
+
+  if (!items.length) {
+    return;
+  }
+
+  const closeAll = () => {
+    items.forEach((item) => {
+      item.classList.remove("is-open");
+      const button = item.querySelector("[data-faq-button]");
+
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+  };
+
+  items.forEach((item) => {
+    const button = item.querySelector("[data-faq-button]");
+
+    if (!button) {
+      return;
+    }
+
+    const isInitiallyOpen = item.classList.contains("is-open");
+
+    if (isInitiallyOpen) {
+      button.setAttribute("aria-expanded", "true");
+    } else {
+      button.setAttribute("aria-expanded", "false");
+    }
+
+    button.addEventListener("click", () => {
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+      closeAll();
+
+      if (!isExpanded) {
+        item.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+};
+
 const initSurfingPage = () => {
   initImages();
   initHeroTicker();
   initSurfingHero();
   initAboutStats();
   initLocationsHeaderPin();
+  initFaqAccordion();
 };
 
 if (document.readyState === "loading") {
@@ -379,4 +426,12 @@ if (imgAbout6) {
   const aboutImageUrl = new URL("./assets/surfing-4.jpg", import.meta.url).href;
 
   imgAbout6.src = aboutImageUrl;
+}
+
+
+const imgAbout7 = document.querySelector(".faq__image");
+if (imgAbout7) {
+  const aboutImageUrl = new URL("./assets/surfing_5.webp", import.meta.url).href;
+
+  imgAbout7.src = aboutImageUrl;
 }

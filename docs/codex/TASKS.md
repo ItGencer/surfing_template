@@ -98,7 +98,7 @@
 - [x] Реалізувати Process grid `Beach to Board`.
 - [x] Реалізувати Photos block з трьома незалежними вертикальними каруселями.
 - [x] Реалізувати Testimonials grid з light/photo-card варіантами.
-- [ ] Реалізувати FAQ accordion, перший пункт відкритий за замовчуванням.
+- [x] Реалізувати FAQ accordion, перший пункт відкритий за замовчуванням.
 - [ ] Реалізувати footer з великим `SURF*IING/SURF*ING`, nav links і attribution row.
 - [ ] Додати адаптивність для tablet/mobile.
 - [x] Додати manual QA screenshots у `docs/design/references/` після першої візуальної версії.
@@ -115,5 +115,5 @@
 - [x] Header не перекриває контент після переходу по anchors.
 - [x] Scroll progress bar рухається коректно.
 - [x] Hero marquee анімується плавно і не створює layout shift.
-- [ ] FAQ accordion доступний з клавіатури.
+- [x] FAQ accordion доступний з клавіатури.
 - [ ] Фото мають alt-тексти або декоративно приховані, якщо вони не несуть змісту.
