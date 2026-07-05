@@ -84,7 +84,7 @@
 - [x] Реалізувати About секцію з фото, текстовими блоками і статистикою.
 - [x] Реалізувати Courses секцію з image + overlay card патерном і sticky stacked scroll behavior.
 - [x] Реалізувати Locations masonry-like grid.
-- [ ] Реалізувати Process grid `Beach to Board`.
+- [x] Реалізувати Process grid `Beach to Board`.
 - [ ] Реалізувати Gallery masonry grid.
 - [ ] Реалізувати Testimonials grid з light/photo-card варіантами.
 - [ ] Реалізувати FAQ accordion, перший пункт відкритий за замовчуванням.

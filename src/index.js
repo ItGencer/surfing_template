@@ -13,9 +13,6 @@ import locationImages3 from "./assets/locationImages3.webp";
 import locationImages4 from "./assets/locationImages4.jpg";
 import locationImages5 from "./assets/locationImages5.jpg";
 
-import surfingImageUrl from "./assets/surfing.webp";
-import surfingTwoImageUrl from "./assets/surfing_2.webp";
-
 const courseImages = [courseImages1, courseImages2, courseImages3, courseImages4];
 const locationImages = [locationImages1, locationImages2, locationImages3, locationImages4, locationImages5];
 
@@ -333,4 +330,12 @@ if (imgAbout3) {
   const aboutImageUrl = new URL("./assets/surfing_2.webp", import.meta.url).href;
 
   imgAbout3.src = aboutImageUrl;
+}
+
+
+const imgAbout4 = document.querySelector(".process__image");
+if (imgAbout4) {
+  const aboutImageUrl = new URL("./assets/surfing_3.webp", import.meta.url).href;
+
+  imgAbout4.src = aboutImageUrl;
 }

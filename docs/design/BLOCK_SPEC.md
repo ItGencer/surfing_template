@@ -298,8 +298,8 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
 - Section header:
   - label `Process`;
   - title `Beach to Board`;
-  - subtitle `We make learning to surf easy, safe, and fun - no experience needed.`
-- Grid: 3 columns x 2 rows desktop.
+  - subtitle `We make learning to surf easy, safe, and fun no experience needed.`
+- Grid: 3 columns x 2 rows desktop, single column mobile.
 - Step card:
   - Background `#F7F7F6`.
   - Radius `12px`.
