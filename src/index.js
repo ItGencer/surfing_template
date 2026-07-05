@@ -12,17 +12,19 @@ import locationImages2 from "./assets/locationImages2.webp";
 import locationImages3 from "./assets/locationImages3.webp";
 import locationImages4 from "./assets/locationImages4.jpg";
 import locationImages5 from "./assets/locationImages5.jpg";
-
 import surfingImageUrl from "./assets/surfing.webp";
 import surfingTwoImageUrl from "./assets/surfing_2.webp";
+import surfingThreeImageUrl from "./assets/surfing_3.webp";
 
 const courseImages = [courseImages1, courseImages2, courseImages3, courseImages4];
 const locationImages = [locationImages1, locationImages2, locationImages3, locationImages4, locationImages5];
+const galleryImages = [aboutImageUrl, locationImages1, locationImages2, locationImages3, surfingImageUrl, surfingTwoImageUrl, surfingThreeImageUrl];
 
 const initImages = () => {
   const aboutImage = document.querySelector("[data-about-image]");
   const courseImageElements = document.querySelectorAll("[data-course-image]");
   const locationImageElements = document.querySelectorAll("[data-location-image]");
+  const galleryImageElements = document.querySelectorAll("[data-gallery-image]");
 
   if (aboutImage) {
     aboutImage.src = aboutImageUrl;
@@ -38,6 +40,15 @@ const initImages = () => {
 
   locationImageElements.forEach((image) => {
     const imageUrl = locationImages[Number(image.dataset.locationImage || 0)];
+
+    if (imageUrl) {
+      image.src = imageUrl;
+    }
+  });
+
+  galleryImageElements.forEach((image) => {
+    const index = Number(image.dataset.galleryImage || 0);
+    const imageUrl = galleryImages[index];
 
     if (imageUrl) {
       image.src = imageUrl;
@@ -333,4 +344,20 @@ if (imgAbout3) {
   const aboutImageUrl = new URL("./assets/surfing_2.webp", import.meta.url).href;
 
   imgAbout3.src = aboutImageUrl;
+}
+
+
+const imgAbout4 = document.querySelector(".process__image");
+if (imgAbout4) {
+  const aboutImageUrl = new URL("./assets/surfing_3.webp", import.meta.url).href;
+
+  imgAbout4.src = aboutImageUrl;
+}
+
+
+const imgAbout5 = document.querySelector(".gallery__image");
+if (imgAbout5) {
+  const aboutImageUrl = new URL("./assets/surfing_3.webp", import.meta.url).href;
+
+  imgAbout5.src = aboutImageUrl;
 }

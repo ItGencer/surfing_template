@@ -298,8 +298,8 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
 - Section header:
   - label `Process`;
   - title `Beach to Board`;
-  - subtitle `We make learning to surf easy, safe, and fun - no experience needed.`
-- Grid: 3 columns x 2 rows desktop.
+  - subtitle `We make learning to surf easy, safe, and fun no experience needed.`
+- Grid: 3 columns x 2 rows desktop, single column mobile.
 - Step card:
   - Background `#F7F7F6`.
   - Radius `12px`.
@@ -315,21 +315,26 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
   - `05` Wave Reading.
   - `06` Catch & Ride.
 
-## 8. Gallery - Meet Memories
+## 8. Photos - Meet Memories
 
-- Before section: full-bleed sky/cloud banner.
 - Section header:
   - label `Photos`;
   - title `Meet Memories`;
   - subtitle `Snapshots of unforgettable rides and perfect waves.`
-- Masonry photo grid:
-  - 3 columns desktop.
-  - Mixed image heights: portrait, square, horizontal strips.
-  - Gap `~16px`.
-  - Radius `8-12px`.
-  - No captions.
-  - First row may look partially cropped to create seamless continuation from previous photo divider.
-- Content: surfers on boards, close-ups of boards, silhouettes, wave action.
+- Layout:
+  - three independent vertical carousel columns desktop.
+  - Column 1: 3 photos, scrolling bottom-to-top cyclically.
+  - Column 2: 3 photos, scrolling top-to-bottom cyclically.
+  - Column 3: 4 photos, scrolling bottom-to-top cyclically.
+  - Each column has its own speed and loop direction; the columns are not linked.
+- Card style:
+  - white/light card with `1px` border `#ECECEC`, radius `12px`, overflow hidden.
+  - image fills card with `object-fit: cover`.
+  - consistent vertical gap between cards.
+- Responsive:
+  - tablet: 2 columns.
+  - mobile: 1 column.
+  - avoid horizontal scroll.
 
 ## 9. Testimonials - Riders' Words
 
