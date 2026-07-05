@@ -68,42 +68,46 @@ const initImages = () => {
 };
 
 const initHeroTicker = () => {
-  const track = document.querySelector("[data-hero-ticker-track]");
-  const group = document.querySelector("[data-hero-ticker-group]");
+  const tickers = document.querySelectorAll("[data-hero-ticker]");
 
-  if (!track || !group) {
-    return;
-  }
+  tickers.forEach((tickerRoot) => {
+    const track = tickerRoot.querySelector("[data-hero-ticker-track]");
+    const group = tickerRoot.querySelector("[data-hero-ticker-group]");
 
-  if (!track.querySelector("[data-hero-ticker-clone]")) {
-    const clone = group.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    clone.dataset.heroTickerClone = "true";
-    track.appendChild(clone);
-  }
-
-  let isResizeTicking = false;
-
-  const updateTicker = () => {
-    const groupWidth = group.getBoundingClientRect().width;
-
-    if (groupWidth > 0) {
-      track.style.setProperty("--ticker-offset", `-${groupWidth}px`);
-      track.style.setProperty("--ticker-duration", `${Math.max(groupWidth / 85, 18).toFixed(2)}s`);
+    if (!track || !group) {
+      return;
     }
 
-    isResizeTicking = false;
-  };
-
-  const requestTickerUpdate = () => {
-    if (!isResizeTicking) {
-      window.requestAnimationFrame(updateTicker);
-      isResizeTicking = true;
+    if (!track.querySelector("[data-hero-ticker-clone]")) {
+      const clone = group.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.dataset.heroTickerClone = "true";
+      track.appendChild(clone);
     }
-  };
 
-  window.addEventListener("resize", requestTickerUpdate);
-  updateTicker();
+    let isResizeTicking = false;
+
+    const updateTicker = () => {
+      const groupWidth = group.getBoundingClientRect().width;
+
+      if (groupWidth > 0) {
+        track.style.setProperty("--ticker-offset", `-${groupWidth}px`);
+        track.style.setProperty("--ticker-duration", `${Math.max(groupWidth / 85, 18).toFixed(2)}s`);
+      }
+
+      isResizeTicking = false;
+    };
+
+    const requestTickerUpdate = () => {
+      if (!isResizeTicking) {
+        window.requestAnimationFrame(updateTicker);
+        isResizeTicking = true;
+      }
+    };
+
+    window.addEventListener("resize", requestTickerUpdate);
+    updateTicker();
+  });
 };
 
 const initSurfingHero = () => {

@@ -402,26 +402,23 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
 
 ## 11. Footer
 
-- Before footer: very tall full-bleed photo banner with shaka gesture, sand, sky, ocean.
-- Repeat Marquee Warning Ticker directly above footer.
+- Repeat the same warning marquee directly above the footer section.
+- Footer background: dark surf-inspired surface, with a bright orange accent for the brand mark and scribble underline.
 - Large decorative logo-title:
-  - `SURF*IING` or `SURF*ING` - `to confirm`.
-  - Black bold text.
+  - `SURF*ING` as the primary footer brand wordmark.
   - Orange asterisk/star.
   - Orange scribble underline.
-- Footer nav:
+- Footer nav links:
   - `About`;
   - `Courses`;
   - `Locations`;
   - `Why Us`;
   - `Testimonials`;
-  - `Instructors`;
+  - `FAQs`;
   - `Gallery`;
-  - `404`.
-- Divider line: `1px solid #ECECEC`.
-- Bottom attribution:
-  - Text: `Ask AI About [Ім'я автора]` - `to confirm`.
-  - 3 small AI-service style icons - exact icons `to confirm`.
+  - `Contact`.
+- Divider line: `1px solid rgba(255,255,255,0.16)`.
+- Bottom attribution: `Ask AI About Surfing Institute` with three small accent dots/icons.
 
 ## Responsive Notes
 

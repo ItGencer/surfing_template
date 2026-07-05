@@ -1638,6 +1638,122 @@ a:focus-visible {
   padding: 0 28px 24px;
 }
 
+.site-footer {
+  padding: 72px 0 40px;
+  background: #0f1114;
+  color: var(--color-white);
+}
+
+.site-footer__inner {
+  width: calc(100% - 48px);
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.site-footer__brand {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.site-footer__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.site-footer__asterisk {
+  color: var(--color-accent-strong);
+}
+
+.site-footer__scribble {
+  width: min(320px, 70vw);
+  height: auto;
+  overflow: visible;
+}
+
+.site-footer__scribble path {
+  fill: none;
+  stroke: var(--color-accent-strong);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.site-footer__nav a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-footer__nav a:hover {
+  color: var(--color-accent-strong);
+}
+
+.site-footer__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.site-footer__icons {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.footer-ai-icon {
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  flex: 0 0 auto;
+  transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+  color: rgba(255,255,255,0.94);
+}
+
+.footer-ai-icon--sun {
+  color: var(--color-accent-strong);
+}
+
+.footer-ai-icon--swirl {
+  color: #111111;
+}
+
+.footer-ai-icon--flake {
+  color: #58c6c6;
+}
+
+.footer-ai-icon:hover {
+  transform: translateY(-4px) scale(1.06);
+  opacity: 0.98;
+}
+
+.footer-ticker {
+  position: relative;
+  inset: 0;
+  height: 74px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
 @keyframes hero-bounce {
   0%,
   100% {
@@ -1879,6 +1995,19 @@ a:focus-visible {
 
   .faq-item.is-open .faq-item__content p {
     padding: 0 24px 22px;
+  }
+
+  .site-footer {
+    padding: 60px 0 34px;
+  }
+
+  .site-footer__inner {
+    width: calc(100% - 32px);
+  }
+
+  .site-footer__meta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .testimonials__title {

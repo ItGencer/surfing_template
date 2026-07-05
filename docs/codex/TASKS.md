@@ -99,7 +99,7 @@
 - [x] Реалізувати Photos block з трьома незалежними вертикальними каруселями.
 - [x] Реалізувати Testimonials grid з light/photo-card варіантами.
 - [x] Реалізувати FAQ accordion, перший пункт відкритий за замовчуванням.
-- [ ] Реалізувати footer з великим `SURF*IING/SURF*ING`, nav links і attribution row.
+- [x] Реалізувати footer з великим `SURF*ING`, nav links і attribution row.
 - [ ] Додати адаптивність для tablet/mobile.
 - [x] Додати manual QA screenshots у `docs/design/references/` після першої візуальної версії.
 
