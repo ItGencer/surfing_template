@@ -1,474 +1,977 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Surfing Institute</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="site-header" data-header>
-        <div class="site-header__inner">
-            <a class="brand" href="#home" aria-label="Surfing home">
-                <span class="brand__mark" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                </span>
-                <span class="brand__name">Surfing</span>
-            </a>
+      <div class="site-header__inner">
+        <a class="brand" href="#home" aria-label="Surfing home">
+          <span class="brand__mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+          <span class="brand__name">Surfing</span>
+        </a>
 
-            <nav class="site-nav" aria-label="Primary navigation">
-                <a href="#about" data-nav-link>About</a>
-                <a href="#courses" data-nav-link>Courses</a>
-                <a href="#locations" data-nav-link>Locations</a>
-                <a href="#why-us" data-nav-link>Why Us</a>
-                <a href="#testimonials" data-nav-link>Testimonials</a>
-            </nav>
-
-            <a class="button site-header__contact" href="#contact">Contact Us</a>
-
-            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false" data-menu-toggle>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-
-        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-nav-panel>
-            <a href="#about" data-nav-link>About</a>
-            <a href="#courses" data-nav-link>Courses</a>
-            <a href="#locations" data-nav-link>Locations</a>
-            <a href="#why-us" data-nav-link>Why Us</a>
-            <a href="#testimonials" data-nav-link>Testimonials</a>
-            <a class="button mobile-nav__contact" href="#contact">Contact Us</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#about" data-nav-link>About</a>
+          <a href="#courses" data-nav-link>Courses</a>
+          <a href="#locations" data-nav-link>Locations</a>
+          <a href="#why-us" data-nav-link>Why Us</a>
+          <a href="#testimonials" data-nav-link>Testimonials</a>
         </nav>
 
-        <div class="scroll-progress" aria-hidden="true">
-            <span data-scroll-progress></span>
-        </div>
+        <a class="button site-header__contact" href="#contact">Contact Us</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        aria-label="Mobile navigation"
+        data-nav-panel
+      >
+        <a href="#about" data-nav-link>About</a>
+        <a href="#courses" data-nav-link>Courses</a>
+        <a href="#locations" data-nav-link>Locations</a>
+        <a href="#why-us" data-nav-link>Why Us</a>
+        <a href="#testimonials" data-nav-link>Testimonials</a>
+        <a class="button mobile-nav__contact" href="#contact">Contact Us</a>
+      </nav>
+
+      <div class="scroll-progress" aria-hidden="true">
+        <span data-scroll-progress></span>
+      </div>
     </header>
 
     <main id="home">
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero__content">
-                <div class="hero__headline">
-                    <h1 class="hero__title" id="hero-title">
-                        SURF<span class="hero__asterisk" aria-hidden="true">*</span>ING
-                    </h1>
-                    <svg class="hero__scribble" viewBox="0 0 440 48" aria-hidden="true" focusable="false">
-                        <path d="M8 30C70 12 139 12 205 25C266 37 320 39 432 15" />
-                        <path d="M45 38C121 25 188 24 252 33C309 41 353 40 397 28" />
-                    </svg>
-                    <p class="hero__subtitle">Whether you're a beginner or chasing barrels, we've got the perfect wave for you.</p>
-                </div>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <div class="hero__headline">
+            <h1 class="hero__title" id="hero-title">
+              SURF<span class="hero__asterisk" aria-hidden="true">*</span>ING
+            </h1>
+            <svg
+              class="hero__scribble"
+              viewBox="0 0 440 48"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M8 30C70 12 139 12 205 25C266 37 320 39 432 15" />
+              <path d="M45 38C121 25 188 24 252 33C309 41 353 40 397 28" />
+            </svg>
+            <p class="hero__subtitle">
+              Whether you're a beginner or chasing barrels, we've got the
+              perfect wave for you.
+            </p>
+          </div>
 
-                <div class="hero__rating" aria-label="Rated 4.9 out of 5">
-                    <span class="hero__stars" aria-hidden="true">★★★★★</span>
-                    <strong>4.9/5</strong>
-                    <span>Best Rated Surfing Institute</span>
+          <div class="hero__rating" aria-label="Rated 4.9 out of 5">
+            <span class="hero__stars" aria-hidden="true">★★★★★</span>
+            <strong>4.9/5</strong>
+            <span>Best Rated Surfing Institute</span>
+          </div>
+        </div>
+
+        <a
+          class="hero__scroll"
+          href="#about"
+          aria-label="Scroll to next section"
+          data-hero-scroll
+        >
+          <span></span>
+        </a>
+
+        <div
+          class="hero-ticker"
+          aria-label="Surf safety alerts"
+          data-hero-ticker
+        >
+          <div class="hero-ticker__track" data-hero-ticker-track>
+            <div class="hero-ticker__group" data-hero-ticker-group>
+              <span class="hero-ticker__item">
+                <svg
+                  class="hero-ticker__icon"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="24" cy="24" r="18" />
+                  <circle cx="24" cy="24" r="7" />
+                  <path d="M12 12l8 8" />
+                  <path d="M28 28l8 8" />
+                  <path d="M36 12l-8 8" />
+                  <path d="M20 28l-8 8" />
+                </svg>
+                SHARK SIGHTED
+              </span>
+              <span class="hero-ticker__item">
+                <svg
+                  class="hero-ticker__icon"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M8 28c9-9 19-15 31-16-1 12-7 22-16 31l-3-12-12-3Z" />
+                  <path d="M30 16l6-6" />
+                  <circle cx="31" cy="22" r="3" />
+                </svg>
+                WARNING
+              </span>
+              <span class="hero-ticker__item">
+                <svg
+                  class="hero-ticker__icon"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M24 7 44 41H4L24 7Z" />
+                  <path d="M24 18v11" />
+                  <path d="M24 35h.01" />
+                </svg>
+                NO SWIMMING
+              </span>
+              <span class="hero-ticker__item">
+                <svg
+                  class="hero-ticker__icon"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="24" cy="24" r="18" />
+                  <circle cx="24" cy="24" r="7" />
+                  <path d="M12 12l8 8" />
+                  <path d="M28 28l8 8" />
+                  <path d="M36 12l-8 8" />
+                  <path d="M20 28l-8 8" />
+                </svg>
+                SHARK SIGHTED
+              </span>
+              <span class="hero-ticker__item">
+                <svg
+                  class="hero-ticker__icon"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M8 28c9-9 19-15 31-16-1 12-7 22-16 31l-3-12-12-3Z" />
+                  <path d="M30 16l6-6" />
+                  <circle cx="31" cy="22" r="3" />
+                </svg>
+                WARNING
+              </span>
+              <span class="hero-ticker__item">
+                <svg
+                  class="hero-ticker__icon"
+                  viewBox="0 0 48 48"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M24 7 44 41H4L24 7Z" />
+                  <path d="M24 18v11" />
+                  <path d="M24 35h.01" />
+                </svg>
+                NO SWIMMING
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about__inner">
+          <div class="about__header">
+            <p class="section-kicker">
+              <span class="section-kicker__icon" aria-hidden="true"></span>
+              About Us
+            </p>
+            <h2 class="about__title" id="about-title">
+              <span>Welcome to</span>
+              Surfing Institute<span
+                class="about__registered"
+                aria-label="registered"
+                >®</span
+              >
+            </h2>
+            <svg
+              class="about__scribble"
+              viewBox="0 0 300 38"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M8 22C55 8 102 10 149 22C198 34 235 31 292 13" />
+              <path d="M38 30C94 19 143 20 189 27C225 33 247 31 275 23" />
+            </svg>
+          </div>
+
+          <div class="about__body">
+            <figure class="about__media">
+              <img
+                data-about-image
+                alt="Surfing Institute instructor briefing students on the beach with surfboards."
+                loading="lazy"
+                width="960"
+                height="1200"
+              />
+            </figure>
+
+            <div class="about__content">
+              <article class="about-card">
+                <span class="about-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M4 18V7l8-4 8 4v11l-8 4-8-4Z" />
+                    <path d="M8 9l4 2 4-2" />
+                    <path d="M12 11v6" />
+                  </svg>
+                </span>
+                <div>
+                  <h3>About Us</h3>
+                  <p>
+                    We help new and returning surfers build ocean confidence
+                    with clear coaching, safe beach habits, and energetic
+                    sessions shaped around real wave conditions.
+                  </p>
                 </div>
+              </article>
+
+              <article class="about-card">
+                <span class="about-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path
+                      d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"
+                    />
+                    <path d="M9 10l2 2 4-4" />
+                  </svg>
+                </span>
+                <div>
+                  <h3>Our Mission</h3>
+                  <p>
+                    Our mission is to make surfing approachable, safe, and
+                    unforgettable, from first pop-up drills on the sand to
+                    confident rides across clean open faces.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="about__stats" aria-label="Surfing Institute highlights">
+            <article class="stat-card">
+              <span class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M3 8l9-4 9 4-9 4-9-4Z" />
+                  <path d="M7 10v5c2.8 2 7.2 2 10 0v-5" />
+                </svg>
+              </span>
+              <strong data-stat-value data-count="120" data-suffix="+"
+                >120+</strong
+              >
+              <span>Happy Students Taught</span>
+            </article>
+
+            <article class="stat-card">
+              <span class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M7 11v9H4v-9h3Z" />
+                  <path
+                    d="M10 20h6.5c1.2 0 2.1-.8 2.4-1.9l1-4.1c.3-1.3-.7-2.5-2-2.5H15l.7-3.3c.2-1-.5-2-1.6-2.2l-.9-.1L10 11v9Z"
+                  />
+                </svg>
+              </span>
+              <strong data-stat-value data-count="95" data-suffix="%"
+                >95%</strong
+              >
+              <span>Student Satisfaction Rate</span>
+            </article>
+
+            <article class="stat-card">
+              <span class="stat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M12 3l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8L6.7 19l1-5.8-4.2-4.1 5.9-.8L12 3Z"
+                  />
+                  <path d="M8 21l4-2 4 2" />
+                </svg>
+              </span>
+              <strong data-stat-value data-count="30" data-suffix="+"
+                >30+</strong
+              >
+              <span>Certified Instructors</span>
+            </article>
+          </div>
+        </div>
+        <img class="about__image" src="" alt="Surfing Instruction" />
+      </section>
+
+      <section class="courses" id="courses" aria-labelledby="courses-title">
+        <div class="courses__inner">
+          <div class="courses__header">
+            <p class="section-kicker courses__kicker">
+              <span class="courses__kicker-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 6h14v12H5z" />
+                  <path d="M8 10h3" />
+                  <path d="M8 14h5" />
+                  <path d="M17 9v6" />
+                </svg>
+              </span>
+              Courses
+            </p>
+            <h2 class="courses__title" id="courses-title">
+              Find Your <span>Wave</span>
+              <svg
+                class="courses__scribble"
+                viewBox="0 0 360 72"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M8 54C38 21 54 27 52 54C78 24 97 21 93 56C123 20 143 24 136 58C173 23 193 22 185 58C224 23 250 22 238 58C281 22 316 19 352 12"
+                />
+              </svg>
+            </h2>
+            <p class="courses__subtitle">
+              To inspire surfers to connect with the ocean through fun, safe,
+              and high-quality instruction.
+            </p>
+          </div>
+
+          <div class="courses__stack" aria-label="Surfing courses">
+            <article
+              class="course-panel course-panel--left"
+              style="--panel-index: 1"
+              aria-labelledby="course-beginner-title"
+            >
+              <img
+                class="course-panel__image"
+                data-course-image="0"
+                alt="Beginner surfers paddling on calm ocean water during a lesson."
+                loading="lazy"
+                width="1400"
+                height="900"
+              />
+              <div class="course-panel__content">
+                <h3 id="course-beginner-title">Beginner Surfing Course</h3>
+                <p>
+                  Never touched a board? We'll teach you ocean safety, paddling,
+                  popping up, and catching your first wave.
+                </p>
+                <strong>Duration: 5 Days | Equipment Included</strong>
+                <div class="course-panel__footer">
+                  <a class="button" href="#contact">Enroll Now</a>
+                  <div
+                    class="course-panel__trust"
+                    aria-label="Rated 5 out of 5 by 221 plus students"
+                  >
+                    <span aria-hidden="true">★★★★★</span>
+                    <small>Trusted by 221+ students</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="course-panel course-panel--right"
+              style="--panel-index: 2"
+              aria-labelledby="course-intermediate-title"
+            >
+              <img
+                class="course-panel__image"
+                data-course-image="1"
+                alt="Intermediate surfer practicing board control near a bright beach break."
+                loading="lazy"
+                width="1400"
+                height="900"
+              />
+              <div class="course-panel__content">
+                <h3 id="course-intermediate-title">
+                  Intermediate Coaching Surf
+                </h3>
+                <p>
+                  Refine your technique, improve your timing, and master new
+                  maneuvers. Perfect for those who want to level up.
+                </p>
+                <strong>Flexible Scheduling | Video Analysis</strong>
+                <div class="course-panel__footer">
+                  <a class="button" href="#contact">Enroll Now</a>
+                  <div
+                    class="course-panel__trust"
+                    aria-label="Rated 5 out of 5 by 189 plus students"
+                  >
+                    <span aria-hidden="true">★★★★★</span>
+                    <small>Trusted by 189+ students</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="course-panel course-panel--left"
+              style="--panel-index: 3"
+              aria-labelledby="course-advanced-title"
+            >
+              <img
+                class="course-panel__image"
+                data-course-image="2"
+                alt="Advanced surfer holding a board at sunset before a training session."
+                loading="lazy"
+                width="1400"
+                height="900"
+              />
+              <div class="course-panel__content">
+                <h3 id="course-advanced-title">Advanced Surfing Training</h3>
+                <p>
+                  Chase bigger waves with guided training focused on speed,
+                  control, and wave selection.
+                </p>
+                <strong>1-on-1 Coaching | Spot Guidance</strong>
+                <div class="course-panel__footer">
+                  <a class="button" href="#contact">Enroll Now</a>
+                  <div
+                    class="course-panel__trust"
+                    aria-label="Rated 5 out of 5 by 154 plus students"
+                  >
+                    <span aria-hidden="true">★★★★★</span>
+                    <small>Trusted by 154+ students</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="course-panel course-panel--right"
+              style="--panel-index: 4"
+              aria-labelledby="course-kids-title"
+            >
+              <img
+                class="course-panel__image"
+                data-course-image="3"
+                alt="Young surfer practicing pop-up drills on a board in beach sand."
+                loading="lazy"
+                width="1400"
+                height="900"
+              />
+              <div class="course-panel__content">
+                <h3 id="course-kids-title">Kids &amp; Teens Surf Camps</h3>
+                <p>
+                  Fun, safe, and super exciting! Special programs designed for
+                  younger surfers to fall in love with the ocean.
+                </p>
+                <strong>Weekly Camps | Certified Lifeguards</strong>
+                <div class="course-panel__footer">
+                  <a class="button" href="#contact">Enroll Now</a>
+                  <div
+                    class="course-panel__trust"
+                    aria-label="Rated 5 out of 5 by 90 plus students"
+                  >
+                    <span aria-hidden="true">★★★★★</span>
+                    <small>Trusted by 90+ students</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <img class="course__image" src="" alt="Surfing Instruction" />
+      </section>
+
+      <section
+        class="locations"
+        id="locations"
+        aria-labelledby="locations-title"
+      >
+        <div class="locations__inner">
+          <div class="locations__header">
+            <p class="section-kicker locations__kicker">
+              <span class="locations__kicker-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 19h16" />
+                  <path d="M7 16c1.8-5.4 5.2-8.6 10-9" />
+                  <path d="M12 8c-2.2-2.5-4.5-3.1-7-1.8" />
+                  <path d="M13 7c1.2-3 3.4-4.2 6.6-3.5" />
+                  <path d="M13 7c2.8.3 4.7 1.7 5.8 4.2" />
+                  <path d="M12 8c-2.8.4-4.8 1.9-6 4.5" />
+                </svg>
+              </span>
+              Beaches
+            </p>
+            <h2 class="locations__title" id="locations-title">
+              Our Locations
+              <svg
+                class="locations__scribble"
+                viewBox="0 0 390 76"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M8 56C40 24 58 29 56 58C86 27 105 24 101 60C132 24 153 27 145 62C184 25 204 24 197 62C238 27 263 23 252 62C300 26 339 21 382 12"
+                />
+              </svg>
+            </h2>
+            <p class="locations__subtitle">
+              We run sessions in some of the world's most iconic surf spots
+            </p>
+          </div>
+
+          <div class="locations__grid" aria-label="Surfing locations">
+            <article class="location-card location-card--bali">
+              <img
+                class="location-card__image"
+                data-location-image="0"
+                alt="Aerial view of a tropical Bali beach with turquoise water and white sand."
+                loading="lazy"
+                width="900"
+                height="620"
+              />
+              <h3>Bali, Indonesia <span aria-label="Indonesia">🇮🇩</span></h3>
+              <p>
+                Tropical waves, warm waters, and year-round surf bliss in a true
+                island paradise.
+              </p>
+            </article>
+
+            <article class="location-card location-card--byron">
+              <img
+                class="location-card__image"
+                data-location-image="1"
+                alt="Bright coastal headland and clear blue water at Byron Bay."
+                loading="lazy"
+                width="900"
+                height="620"
+              />
+              <h3>
+                Byron Bay, Australia <span aria-label="Australia">🇦🇺</span>
+              </h3>
+              <p>
+                Relaxed coastal vibes and some of Australia's most iconic and
+                consistent point breaks.
+              </p>
+            </article>
+
+            <article class="location-card location-card--goa">
+              <img
+                class="location-card__image"
+                data-location-image="2"
+                alt="Wide Goa coastline with palms, beach, and gentle rolling waves."
+                loading="lazy"
+                width="900"
+                height="620"
+              />
+              <h3>Goa, India <span aria-label="India">🇮🇳</span></h3>
+              <p>
+                Golden beaches, vibrant culture, and gentle waves perfect for
+                all skill levels.
+              </p>
+            </article>
+
+            <article class="location-card location-card--hossegor">
+              <img
+                class="location-card__image"
+                data-location-image="3"
+                alt="Long Atlantic beach near Hossegor with cliffs, green hills, and clean surf lines."
+                loading="lazy"
+                width="900"
+                height="620"
+              />
+              <h3>Hossegor, France <span aria-label="France">🇫🇷</span></h3>
+              <p>
+                Europe's surf mecca with powerful Atlantic swells and a lively
+                surf scene.
+              </p>
+            </article>
+
+            <article class="location-card location-card--santa-cruz">
+              <img
+                class="location-card__image"
+                data-location-image="4"
+                alt="Santa Cruz coastline with surfers in the water and a busy beach town."
+                loading="lazy"
+                width="900"
+                height="620"
+              />
+              <h3>
+                Santa Cruz, California
+                <span aria-label="United States">🇺🇸</span>
+              </h3>
+              <p>
+                Surf culture capital with consistent waves and a thriving
+                beach-town atmosphere.
+              </p>
+            </article>
+          </div>
+        </div>
+        <img class="locations__image" src="" alt="Surfing Instruction" />
+      </section>
+
+      <section class="process" id="process" aria-labelledby="process-title">
+        <div class="process__inner">
+          <div class="process__header">
+            <p class="section-kicker process__kicker">
+              <span class="process__kicker-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 12h16M12 4v16" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </span>
+              Process
+            </p>
+            <h2 class="process__title" id="process-title">Beach to Board</h2>
+            <p class="process__subtitle">
+              We make learning to surf easy, safe, and fun no experience needed.
+            </p>
+          </div>
+
+          <div class="process__grid" aria-label="Surf lesson process steps">
+            <article class="process-step">
+              <span class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </span>
+              <span class="process-step__order">01</span>
+              <h3>Awareness</h3>
+              <p>
+                Learn tides, currents, and surf rules for safe, confident
+                surfing.
+              </p>
+            </article>
+
+            <article class="process-step">
+              <span class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M6 18V6l6 6 6-6v12" />
+                </svg>
+              </span>
+              <span class="process-step__order">02</span>
+              <h3>Familiarization</h3>
+              <p>
+                Understand your board, handling, and positioning before hitting
+                waves.
+              </p>
+            </article>
+
+            <article class="process-step">
+              <span class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 17s3-5 8-5 8 5 8 5" />
+                  <path d="M8 9L6 5l4 2 4-2-2 4" />
+                </svg>
+              </span>
+              <span class="process-step__order">03</span>
+              <h3>Paddling</h3>
+              <p>
+                Master paddling strength and body placement for easier wave
+                catching.
+              </p>
+            </article>
+
+            <article class="process-step">
+              <span class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 18l6-10 6 10" />
+                  <path d="M10 16h4" />
+                </svg>
+              </span>
+              <span class="process-step__order">04</span>
+              <h3>Pop-Up</h3>
+              <p>
+                Practice quick, smooth transitions from paddling to standing on
+                waves.
+              </p>
+            </article>
+
+            <article class="process-step">
+              <span class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 16c4-4 6-6 14-5" />
+                  <path d="M18 8l4-2-2 4" />
+                  <path d="M9 10l-3 6" />
+                </svg>
+              </span>
+              <span class="process-step__order">05</span>
+              <h3>Wave Reading</h3>
+              <p>Identify, time, and choose the right waves for your skills.</p>
+            </article>
+
+            <article class="process-step">
+              <span class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 15s5-6 8-6 8 6 8 6" />
+                  <path d="M7 14l3-2 4 1 3 2" />
+                </svg>
+              </span>
+              <span class="process-step__order">06</span>
+              <h3>Catch &amp; Ride</h3>
+              <p>
+                Catch waves, refine techniques, and build confidence on every
+                ride.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <img class="process__image" src="" alt="Surfing Instruction" />
+      </section>
+
+      <section class="gallery" id="photos" aria-labelledby="photos-title">
+        <div class="gallery__inner">
+          <div class="gallery__header">
+            <p class="section-kicker gallery__kicker">
+              <span class="gallery__kicker-icon" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.5 2.5L2 10.5L10 13L13.5 21.5L21.5 2.5Z"
+                    stroke="#F3691D"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M21.5 2.5L10 13"
+                    stroke="#F3691D"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              Photos
+            </p>
+            <h2 class="gallery__title" id="photos-title">Meet Memories</h2>
+            <p class="gallery__subtitle">
+              Snapshots of unforgettable rides and perfect waves.
+            </p>
+          </div>
+
+          <div class="gallery__columns">
+            <div class="gallery-column gallery-column--slow gallery-column--up">
+              <div class="gallery-column__viewport">
+                <div class="gallery-column__track">
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="0"
+                      alt="Surfer gliding through a clean wave"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="1"
+                      alt="Surfer paddling with red board on a bright morning"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="2"
+                      alt="Surfer sitting on the board in calm blue water"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="0"
+                      alt="Surfer gliding through a clean wave"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="1"
+                      alt="Surfer paddling with red board on a bright morning"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="2"
+                      alt="Surfer sitting on the board in calm blue water"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                </div>
+              </div>
             </div>
 
-            <a class="hero__scroll" href="#about" aria-label="Scroll to next section" data-hero-scroll>
-                <span></span>
-            </a>
-
-            <div class="hero-ticker" aria-label="Surf safety alerts" data-hero-ticker>
-                <div class="hero-ticker__track" data-hero-ticker-track>
-                    <div class="hero-ticker__group" data-hero-ticker-group>
-                        <span class="hero-ticker__item">
-                            <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                                <circle cx="24" cy="24" r="18" />
-                                <circle cx="24" cy="24" r="7" />
-                                <path d="M12 12l8 8" />
-                                <path d="M28 28l8 8" />
-                                <path d="M36 12l-8 8" />
-                                <path d="M20 28l-8 8" />
-                            </svg>
-                            SHARK SIGHTED
-                        </span>
-                        <span class="hero-ticker__item">
-                            <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                                <path d="M8 28c9-9 19-15 31-16-1 12-7 22-16 31l-3-12-12-3Z" />
-                                <path d="M30 16l6-6" />
-                                <circle cx="31" cy="22" r="3" />
-                            </svg>
-                            WARNING
-                        </span>
-                        <span class="hero-ticker__item">
-                            <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                                <path d="M24 7 44 41H4L24 7Z" />
-                                <path d="M24 18v11" />
-                                <path d="M24 35h.01" />
-                            </svg>
-                            NO SWIMMING
-                        </span>
-                        <span class="hero-ticker__item">
-                            <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                                <circle cx="24" cy="24" r="18" />
-                                <circle cx="24" cy="24" r="7" />
-                                <path d="M12 12l8 8" />
-                                <path d="M28 28l8 8" />
-                                <path d="M36 12l-8 8" />
-                                <path d="M20 28l-8 8" />
-                            </svg>
-                            SHARK SIGHTED
-                        </span>
-                        <span class="hero-ticker__item">
-                            <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                                <path d="M8 28c9-9 19-15 31-16-1 12-7 22-16 31l-3-12-12-3Z" />
-                                <path d="M30 16l6-6" />
-                                <circle cx="31" cy="22" r="3" />
-                            </svg>
-                            WARNING
-                        </span>
-                        <span class="hero-ticker__item">
-                            <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                                <path d="M24 7 44 41H4L24 7Z" />
-                                <path d="M24 18v11" />
-                                <path d="M24 35h.01" />
-                            </svg>
-                            NO SWIMMING
-                        </span>
-                    </div>
+            <div
+              class="gallery-column gallery-column--medium gallery-column--down"
+            >
+              <div class="gallery-column__viewport">
+                <div class="gallery-column__track">
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="3"
+                      alt="Surfer riding a wave with bright sunlight"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="4"
+                      alt="Surfer holding board on beach with ocean view"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="5"
+                      alt="Surfer on a blue board in the surf"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="3"
+                      alt="Surfer riding a wave with bright sunlight"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="4"
+                      alt="Surfer holding board on beach with ocean view"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="5"
+                      alt="Surfer on a blue board in the surf"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
                 </div>
-            </div>
-        </section>
-
-        <section class="about" id="about" aria-labelledby="about-title">
-            <div class="about__inner">
-                <div class="about__header">
-                    <p class="section-kicker">
-                        <span class="section-kicker__icon" aria-hidden="true"></span>
-                        About Us
-                    </p>
-                    <h2 class="about__title" id="about-title">
-                        <span>Welcome to</span>
-                        Surfing Institute<span class="about__registered" aria-label="registered">®</span>
-                    </h2>
-                    <svg class="about__scribble" viewBox="0 0 300 38" aria-hidden="true" focusable="false">
-                        <path d="M8 22C55 8 102 10 149 22C198 34 235 31 292 13" />
-                        <path d="M38 30C94 19 143 20 189 27C225 33 247 31 275 23" />
-                    </svg>
-                </div>
-
-                <div class="about__body">
-                    <figure class="about__media">
-                        <img data-about-image alt="Surfing Institute instructor briefing students on the beach with surfboards." loading="lazy" width="960" height="1200" />
-                    </figure>
-
-                    <div class="about__content">
-                        <article class="about-card">
-                            <span class="about-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" focusable="false">
-                                    <path d="M4 18V7l8-4 8 4v11l-8 4-8-4Z" />
-                                    <path d="M8 9l4 2 4-2" />
-                                    <path d="M12 11v6" />
-                                </svg>
-                            </span>
-                            <div>
-                                <h3>About Us</h3>
-                                <p>We help new and returning surfers build ocean confidence with clear coaching, safe beach habits, and energetic sessions shaped around real wave conditions.</p>
-                            </div>
-                        </article>
-
-                        <article class="about-card">
-                            <span class="about-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" focusable="false">
-                                    <path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z" />
-                                    <path d="M9 10l2 2 4-4" />
-                                </svg>
-                            </span>
-                            <div>
-                                <h3>Our Mission</h3>
-                                <p>Our mission is to make surfing approachable, safe, and unforgettable, from first pop-up drills on the sand to confident rides across clean open faces.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="about__stats" aria-label="Surfing Institute highlights">
-                    <article class="stat-card">
-                        <span class="stat-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M3 8l9-4 9 4-9 4-9-4Z" />
-                                <path d="M7 10v5c2.8 2 7.2 2 10 0v-5" />
-                            </svg>
-                        </span>
-                        <strong data-stat-value data-count="120" data-suffix="+">120+</strong>
-                        <span>Happy Students Taught</span>
-                    </article>
-
-                    <article class="stat-card">
-                        <span class="stat-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M7 11v9H4v-9h3Z" />
-                                <path d="M10 20h6.5c1.2 0 2.1-.8 2.4-1.9l1-4.1c.3-1.3-.7-2.5-2-2.5H15l.7-3.3c.2-1-.5-2-1.6-2.2l-.9-.1L10 11v9Z" />
-                            </svg>
-                        </span>
-                        <strong data-stat-value data-count="95" data-suffix="%">95%</strong>
-                        <span>Student Satisfaction Rate</span>
-                    </article>
-
-                    <article class="stat-card">
-                        <span class="stat-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M12 3l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8L6.7 19l1-5.8-4.2-4.1 5.9-.8L12 3Z" />
-                                <path d="M8 21l4-2 4 2" />
-                            </svg>
-                        </span>
-                        <strong data-stat-value data-count="30" data-suffix="+">30+</strong>
-                        <span>Certified Instructors</span>
-                    </article>
-                </div>
-            </div>
-            <img class="about__image" src="" alt="Surfing Instruction" />
-        </section>
-
-        <section class="courses" id="courses" aria-labelledby="courses-title">
-            <div class="courses__inner">
-                <div class="courses__header">
-                    <p class="section-kicker courses__kicker">
-                        <span class="courses__kicker-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M5 6h14v12H5z" />
-                                <path d="M8 10h3" />
-                                <path d="M8 14h5" />
-                                <path d="M17 9v6" />
-                            </svg>
-                        </span>
-                        Courses
-                    </p>
-                    <h2 class="courses__title" id="courses-title">
-                        Find Your <span>Wave</span>
-                        <svg class="courses__scribble" viewBox="0 0 360 72" aria-hidden="true" focusable="false">
-                            <path d="M8 54C38 21 54 27 52 54C78 24 97 21 93 56C123 20 143 24 136 58C173 23 193 22 185 58C224 23 250 22 238 58C281 22 316 19 352 12" />
-                        </svg>
-                    </h2>
-                    <p class="courses__subtitle">To inspire surfers to connect with the ocean through fun, safe, and high-quality instruction.</p>
-                </div>
-
-                <div class="courses__stack" aria-label="Surfing courses">
-                    <article class="course-panel course-panel--left" style="--panel-index: 1;" aria-labelledby="course-beginner-title">
-                        <img class="course-panel__image" data-course-image="0" alt="Beginner surfers paddling on calm ocean water during a lesson." loading="lazy" width="1400" height="900" />
-                        <div class="course-panel__content">
-                            <h3 id="course-beginner-title">Beginner Surfing Course</h3>
-                            <p>Never touched a board? We'll teach you ocean safety, paddling, popping up, and catching your first wave.</p>
-                            <strong>Duration: 5 Days | Equipment Included</strong>
-                            <div class="course-panel__footer">
-                                <a class="button" href="#contact">Enroll Now</a>
-                                <div class="course-panel__trust" aria-label="Rated 5 out of 5 by 221 plus students">
-                                    <span aria-hidden="true">★★★★★</span>
-                                    <small>Trusted by 221+ students</small>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="course-panel course-panel--right" style="--panel-index: 2;" aria-labelledby="course-intermediate-title">
-                        <img class="course-panel__image" data-course-image="1" alt="Intermediate surfer practicing board control near a bright beach break." loading="lazy" width="1400" height="900" />
-                        <div class="course-panel__content">
-                            <h3 id="course-intermediate-title">Intermediate Coaching Surf</h3>
-                            <p>Refine your technique, improve your timing, and master new maneuvers. Perfect for those who want to level up.</p>
-                            <strong>Flexible Scheduling | Video Analysis</strong>
-                            <div class="course-panel__footer">
-                                <a class="button" href="#contact">Enroll Now</a>
-                                <div class="course-panel__trust" aria-label="Rated 5 out of 5 by 189 plus students">
-                                    <span aria-hidden="true">★★★★★</span>
-                                    <small>Trusted by 189+ students</small>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="course-panel course-panel--left" style="--panel-index: 3;" aria-labelledby="course-advanced-title">
-                        <img class="course-panel__image" data-course-image="2" alt="Advanced surfer holding a board at sunset before a training session." loading="lazy" width="1400" height="900" />
-                        <div class="course-panel__content">
-                            <h3 id="course-advanced-title">Advanced Surfing Training</h3>
-                            <p>Chase bigger waves with guided training focused on speed, control, and wave selection.</p>
-                            <strong>1-on-1 Coaching | Spot Guidance</strong>
-                            <div class="course-panel__footer">
-                                <a class="button" href="#contact">Enroll Now</a>
-                                <div class="course-panel__trust" aria-label="Rated 5 out of 5 by 154 plus students">
-                                    <span aria-hidden="true">★★★★★</span>
-                                    <small>Trusted by 154+ students</small>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="course-panel course-panel--right" style="--panel-index: 4;" aria-labelledby="course-kids-title">
-                        <img class="course-panel__image" data-course-image="3" alt="Young surfer practicing pop-up drills on a board in beach sand." loading="lazy" width="1400" height="900" />
-                        <div class="course-panel__content">
-                            <h3 id="course-kids-title">Kids &amp; Teens Surf Camps</h3>
-                            <p>Fun, safe, and super exciting! Special programs designed for younger surfers to fall in love with the ocean.</p>
-                            <strong>Weekly Camps | Certified Lifeguards</strong>
-                            <div class="course-panel__footer">
-                                <a class="button" href="#contact">Enroll Now</a>
-                                <div class="course-panel__trust" aria-label="Rated 5 out of 5 by 90 plus students">
-                                    <span aria-hidden="true">★★★★★</span>
-                                    <small>Trusted by 90+ students</small>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+              </div>
             </div>
 
-            <img class="course__image" src="" alt="Surfing Instruction" />
-        </section>
-
-        <section class="locations" id="locations" aria-labelledby="locations-title">
-            <div class="locations__inner">
-                <div class="locations__header">
-                    <p class="section-kicker locations__kicker">
-                        <span class="locations__kicker-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M4 19h16" />
-                                <path d="M7 16c1.8-5.4 5.2-8.6 10-9" />
-                                <path d="M12 8c-2.2-2.5-4.5-3.1-7-1.8" />
-                                <path d="M13 7c1.2-3 3.4-4.2 6.6-3.5" />
-                                <path d="M13 7c2.8.3 4.7 1.7 5.8 4.2" />
-                                <path d="M12 8c-2.8.4-4.8 1.9-6 4.5" />
-                            </svg>
-                        </span>
-                        Beaches
-                    </p>
-                    <h2 class="locations__title" id="locations-title">
-                        Our Locations
-                        <svg class="locations__scribble" viewBox="0 0 390 76" aria-hidden="true" focusable="false">
-                            <path d="M8 56C40 24 58 29 56 58C86 27 105 24 101 60C132 24 153 27 145 62C184 25 204 24 197 62C238 27 263 23 252 62C300 26 339 21 382 12" />
-                        </svg>
-                    </h2>
-                    <p class="locations__subtitle">We run sessions in some of the world's most iconic surf spots</p>
+            <div class="gallery-column gallery-column--fast gallery-column--up">
+              <div class="gallery-column__viewport">
+                <div class="gallery-column__track">
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="1"
+                      alt="Surfer paddling with red board on a bright morning"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="2"
+                      alt="Surfer sitting on the board in calm blue water"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="3"
+                      alt="Surfer riding a wave with bright sunlight"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="4"
+                      alt="Surfer holding board on beach with ocean view"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="1"
+                      alt="Surfer paddling with red board on a bright morning"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="2"
+                      alt="Surfer sitting on the board in calm blue water"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="3"
+                      alt="Surfer riding a wave with bright sunlight"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img
+                      data-gallery-image="4"
+                      alt="Surfer holding board on beach with ocean view"
+                      loading="lazy"
+                      width="900"
+                      height="620"
+                    />
+                  </figure>
                 </div>
-
-                <div class="locations__grid" aria-label="Surfing locations">
-                    <article class="location-card location-card--bali">
-                        <img class="location-card__image" data-location-image="0" alt="Aerial view of a tropical Bali beach with turquoise water and white sand." loading="lazy" width="900" height="620" />
-                        <h3>Bali, Indonesia <span aria-label="Indonesia">🇮🇩</span></h3>
-                        <p>Tropical waves, warm waters, and year-round surf bliss in a true island paradise.</p>
-                    </article>
-
-                    <article class="location-card location-card--byron">
-                        <img class="location-card__image" data-location-image="1" alt="Bright coastal headland and clear blue water at Byron Bay." loading="lazy" width="900" height="620" />
-                        <h3>Byron Bay, Australia <span aria-label="Australia">🇦🇺</span></h3>
-                        <p>Relaxed coastal vibes and some of Australia's most iconic and consistent point breaks.</p>
-                    </article>
-
-                    <article class="location-card location-card--goa">
-                        <img class="location-card__image" data-location-image="2" alt="Wide Goa coastline with palms, beach, and gentle rolling waves." loading="lazy" width="900" height="620" />
-                        <h3>Goa, India <span aria-label="India">🇮🇳</span></h3>
-                        <p>Golden beaches, vibrant culture, and gentle waves perfect for all skill levels.</p>
-                    </article>
-
-                    <article class="location-card location-card--hossegor">
-                        <img class="location-card__image" data-location-image="3" alt="Long Atlantic beach near Hossegor with cliffs, green hills, and clean surf lines." loading="lazy" width="900" height="620" />
-                        <h3>Hossegor, France <span aria-label="France">🇫🇷</span></h3>
-                        <p>Europe's surf mecca with powerful Atlantic swells and a lively surf scene.</p>
-                    </article>
-
-                    <article class="location-card location-card--santa-cruz">
-                        <img class="location-card__image" data-location-image="4" alt="Santa Cruz coastline with surfers in the water and a busy beach town." loading="lazy" width="900" height="620" />
-                        <h3>Santa Cruz, California <span aria-label="United States">🇺🇸</span></h3>
-                        <p>Surf culture capital with consistent waves and a thriving beach-town atmosphere.</p>
-                    </article>
-                </div>
+              </div>
             </div>
-            <img class="locations__image" src="" alt="Surfing Instruction" />
-        </section>
-
-        <section class="process" id="process" aria-labelledby="process-title">
-            <div class="process__inner">
-                <div class="process__header">
-                    <p class="section-kicker process__kicker">
-                        <span class="process__kicker-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M4 12h16M12 4v16" />
-                                <circle cx="12" cy="12" r="3" />
-                            </svg>
-                        </span>
-                        Process
-                    </p>
-                    <h2 class="process__title" id="process-title">Beach to Board</h2>
-                    <p class="process__subtitle">We make learning to surf easy, safe, and fun no experience needed.</p>
-                </div>
-
-                <div class="process__grid" aria-label="Surf lesson process steps">
-                    <article class="process-step">
-                        <span class="process-step__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </span>
-                        <span class="process-step__order">01</span>
-                        <h3>Awareness</h3>
-                        <p>Learn tides, currents, and surf rules for safe, confident surfing.</p>
-                    </article>
-
-                    <article class="process-step">
-                        <span class="process-step__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M6 18V6l6 6 6-6v12" />
-                            </svg>
-                        </span>
-                        <span class="process-step__order">02</span>
-                        <h3>Familiarization</h3>
-                        <p>Understand your board, handling, and positioning before hitting waves.</p>
-                    </article>
-
-                    <article class="process-step">
-                        <span class="process-step__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M4 17s3-5 8-5 8 5 8 5" />
-                                <path d="M8 9L6 5l4 2 4-2-2 4" />
-                            </svg>
-                        </span>
-                        <span class="process-step__order">03</span>
-                        <h3>Paddling</h3>
-                        <p>Master paddling strength and body placement for easier wave catching.</p>
-                    </article>
-
-                    <article class="process-step">
-                        <span class="process-step__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M4 18l6-10 6 10" />
-                                <path d="M10 16h4" />
-                            </svg>
-                        </span>
-                        <span class="process-step__order">04</span>
-                        <h3>Pop-Up</h3>
-                        <p>Practice quick, smooth transitions from paddling to standing on waves.</p>
-                    </article>
-
-                    <article class="process-step">
-                        <span class="process-step__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M5 16c4-4 6-6 14-5" />
-                                <path d="M18 8l4-2-2 4" />
-                                <path d="M9 10l-3 6" />
-                            </svg>
-                        </span>
-                        <span class="process-step__order">05</span>
-                        <h3>Wave Reading</h3>
-                        <p>Identify, time, and choose the right waves for your skills.</p>
-                    </article>
-
-                    <article class="process-step">
-                        <span class="process-step__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M4 15s5-6 8-6 8 6 8 6" />
-                                <path d="M7 14l3-2 4 1 3 2" />
-                            </svg>
-                        </span>
-                        <span class="process-step__order">06</span>
-                        <h3>Catch &amp; Ride</h3>
-                        <p>Catch waves, refine techniques, and build confidence on every ride.</p>
-                    </article>
-                </div>
-            </div>
-
-            <img class="process__image" src="" alt="Surfing Instruction" />
-        </section>
+          </div>
+        </div> 
+        <img class="gallery__image" src="" alt="Surfing Instruction" />
+     
+      </section>
     </main>
-</body>
+  </body>
 </html>
