@@ -3,20 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Surfing Institute</title>
+    <meta
+      name="description"
+      content="Surfing Institute offers beginner surf lessons, advanced surf coaching, kids surf camps, beach safety training, and guided surf sessions at world-class surf locations."
+    />
+    <meta
+      name="keywords"
+      content="surfing lessons, surf school, surfing institute, beginner surfing course, surf coaching, surf camps, surf instructors"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Surfing Institute" />
+    <meta name="theme-color" content="#ff6a00" />
+    <meta name="application-name" content="Surfing Institute" />
+    <link rel="canonical" href="/" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6a00'/%3E%3Cpath d='M19 45 43 21M25 49 49 25M15 37 37 15' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+
+    <meta property="og:title" content="Surfing Institute | Surf Lessons & Coaching" />
+    <meta
+      property="og:description"
+      content="Learn to surf with safe, energetic coaching for beginners, kids, and advanced riders."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:site_name" content="Surfing Institute" />
+    <meta property="og:image" content="./assets/hero.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Surfing Institute | Surf Lessons & Coaching" />
+    <meta
+      name="twitter:description"
+      content="Beginner surfing courses, private coaching, kids camps, and world-class beach locations."
+    />
+    <meta name="twitter:image" content="./assets/hero.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Surfing Institute",
+        "url": "/",
+        "description": "Surfing Institute provides surf lessons, surf camps, private coaching, ocean safety instruction, and guided sessions for beginners through advanced surfers.",
+        "sport": "Surfing",
+        "brand": {
+          "@type": "Brand",
+          "name": "Surfing Institute"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Surfing courses",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Beginner Surfing Course",
+                "description": "Ocean safety, paddling, pop-up practice, and first-wave coaching."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Intermediate Coaching Surf",
+                "description": "Technique refinement, timing, maneuvers, and video analysis."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Kids and Teens Surf Camps",
+                "description": "Safe and fun surf programs for younger surfers."
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    <title>Surfing Institute | Surf Lessons, Camps & Coaching</title>
   </head>
   <body>
-    <header class="site-header" data-header>
-      <div class="site-header__inner">
-        <a class="brand" href="#home" aria-label="Surfing home">
-          <span class="brand__mark" aria-hidden="true">
+    <header class="header" data-header>
+      <div class="header__inner">
+        <a class="header__brand" href="#home" aria-label="Surfing home">
+          <span class="header__brand__mark" aria-hidden="true">
             <span></span>
             <span></span>
           </span>
-          <span class="brand__name">Surfing</span>
+          <span class="header__brand__name">Surfing</span>
         </a>
 
-        <nav class="site-nav" aria-label="Primary navigation">
+        <nav class="header__nav" aria-label="Primary navigation">
           <a href="#about" data-nav-link>About</a>
           <a href="#courses" data-nav-link>Courses</a>
           <a href="#locations" data-nav-link>Locations</a>
@@ -24,10 +105,10 @@
           <a href="#testimonials" data-nav-link>Testimonials</a>
         </nav>
 
-        <a class="button site-header__contact" href="#contact">Contact Us</a>
+        <a class="button header__contact" href="#contact">Contact Us</a>
 
         <button
-          class="menu-toggle"
+          class="header__toggle"
           type="button"
           aria-label="Open navigation"
           aria-controls="mobile-nav"
@@ -195,12 +276,12 @@
 
       <section class="about" id="about" aria-labelledby="about-title">
         <div class="about__inner">
-          <div class="about__header">
+          <div class="about__inner__header">
             <p class="section-kicker">
               <span class="section-kicker__icon" aria-hidden="true"></span>
               About Us
             </p>
-            <h2 class="about__title" id="about-title">
+            <h2 class="about__inner__title" id="about-title">
               <span>Welcome to</span>
               Surfing Institute<span
                 class="about__registered"
@@ -209,7 +290,7 @@
               >
             </h2>
             <svg
-              class="about__scribble"
+              class="about__inner__scribble"
               viewBox="0 0 300 38"
               aria-hidden="true"
               focusable="false"
@@ -219,8 +300,8 @@
             </svg>
           </div>
 
-          <div class="about__body">
-            <figure class="about__media">
+          <div class="about__inner__body">
+            <figure class="about__inner__body__media">
               <img
                 data-about-image
                 alt="Surfing Institute instructor briefing students on the beach with surfboards."
@@ -230,7 +311,7 @@
               />
             </figure>
 
-            <div class="about__content">
+            <div class="about__inner__body__content">
               <article class="about-card">
                 <span class="about-card__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" focusable="false">
@@ -270,7 +351,7 @@
             </div>
           </div>
 
-          <div class="about__stats" aria-label="Surfing Institute highlights">
+          <div class="about__inner__stats" aria-label="Surfing Institute highlights">
             <article class="stat-card">
               <span class="stat-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
@@ -315,14 +396,22 @@
             </article>
           </div>
         </div>
-        <img class="about__image" src="" alt="Surfing Instruction" />
+        <img
+          class="about__image"
+          src=""
+          alt="Surfing instruction on the beach"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
       </section>
 
       <section class="courses" id="courses" aria-labelledby="courses-title">
         <div class="courses__inner">
-          <div class="courses__header">
+          <div class="courses__inner__header">
             <p class="section-kicker courses__kicker">
-              <span class="courses__kicker-icon" aria-hidden="true">
+              <span class="courses__kicker__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
                   <path d="M5 6h14v12H5z" />
                   <path d="M8 10h3" />
@@ -332,10 +421,9 @@
               </span>
               Courses
             </p>
-            <h2 class="courses__title" id="courses-title">
+            <h2 class="courses__inner__header__title" id="courses-title">
               Find Your <span>Wave</span>
               <svg
-                class="courses__scribble"
                 viewBox="0 0 360 72"
                 aria-hidden="true"
                 focusable="false"
@@ -345,13 +433,13 @@
                 />
               </svg>
             </h2>
-            <p class="courses__subtitle">
+            <p class="courses__inner__header__subtitle">
               To inspire surfers to connect with the ocean through fun, safe,
               and high-quality instruction.
             </p>
           </div>
 
-          <div class="courses__stack" aria-label="Surfing courses">
+          <div class="courses__inner__stack" aria-label="Surfing courses">
             <article
               class="course-panel course-panel--left"
               style="--panel-index: 1"
@@ -488,7 +576,15 @@
           </div>
         </div>
 
-        <img class="course__image" src="" alt="Surfing Instruction" />
+        <img
+          class="courses__image"
+          src=""
+          alt="Surfing student practicing on ocean waves"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
       </section>
 
       <section
@@ -497,9 +593,9 @@
         aria-labelledby="locations-title"
       >
         <div class="locations__inner">
-          <div class="locations__header">
-            <p class="section-kicker locations__kicker">
-              <span class="locations__kicker-icon" aria-hidden="true">
+          <div class="locations__inner__header">
+            <p class="section-kicker locations__inner__header__kicker">
+              <span class="locations__inner__header__kicker__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
                   <path d="M4 19h16" />
                   <path d="M7 16c1.8-5.4 5.2-8.6 10-9" />
@@ -511,7 +607,7 @@
               </span>
               Beaches
             </p>
-            <h2 class="locations__title" id="locations-title">
+            <h2 class="locations__inner__header__title" id="locations-title">
               Our Locations
               <svg
                 class="locations__scribble"
@@ -524,12 +620,12 @@
                 />
               </svg>
             </h2>
-            <p class="locations__subtitle">
+            <p class="locations__inner__header__subtitle">
               We run sessions in some of the world's most iconic surf spots
             </p>
           </div>
 
-          <div class="locations__grid" aria-label="Surfing locations">
+          <div class="locations__inner__grid" aria-label="Surfing locations">
             <article class="location-card location-card--bali">
               <img
                 class="location-card__image"
@@ -616,14 +712,22 @@
             </article>
           </div>
         </div>
-        <img class="locations__image" src="" alt="Surfing Instruction" />
+        <img
+          class="locations__image"
+          src=""
+          alt="Surfing beach with clean blue waves"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
       </section>
 
-      <section class="process" id="process" aria-labelledby="process-title">
+      <section class="process" id="why-us" aria-labelledby="process-title">
         <div class="process__inner">
-          <div class="process__header">
-            <p class="section-kicker process__kicker">
-              <span class="process__kicker-icon" aria-hidden="true">
+          <div class="process__inner__header">
+            <p class="section-kicker process__inner__header__kicker">
+              <span class="process__inner__header__kicker__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
                   <path d="M4 12h16M12 4v16" />
                   <circle cx="12" cy="12" r="3" />
@@ -631,13 +735,13 @@
               </span>
               Process
             </p>
-            <h2 class="process__title" id="process-title">Beach to Board</h2>
-            <p class="process__subtitle">
+            <h2 class="process__inner__header__title" id="process-title">Beach to Board</h2>
+            <p class="process__inner__header__subtitle">
               We make learning to surf easy, safe, and fun no experience needed.
             </p>
           </div>
 
-          <div class="process__grid" aria-label="Surf lesson process steps">
+          <div class="process__inner__grid" aria-label="Surf lesson process steps">
             <article class="process-step">
               <span class="process-step__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
@@ -726,14 +830,22 @@
           </div>
         </div>
 
-        <img class="process__image" src="" alt="Surfing Instruction" />
+        <img
+          class="process__image"
+          src=""
+          alt="Surf coach guiding students through surfing practice"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
       </section>
 
       <section class="gallery" id="photos" aria-labelledby="photos-title">
         <div class="gallery__inner">
-          <div class="gallery__header">
-            <p class="section-kicker gallery__kicker">
-              <span class="gallery__kicker-icon" aria-hidden="true">
+          <div class="gallery__inner__header">
+            <p class="section-kicker gallery__inner__header__kicker">
+              <span class="gallery__inner__header__kicker__icon" aria-hidden="true">
                 <svg
                   width="16"
                   height="16"
@@ -758,13 +870,13 @@
               </span>
               Photos
             </p>
-            <h2 class="gallery__title" id="photos-title">Meet Memories</h2>
-            <p class="gallery__subtitle">
+            <h2 class="gallery__inner__header__title" id="photos-title">Meet Memories</h2>
+            <p class="gallery__inner__header__subtitle">
               Snapshots of unforgettable rides and perfect waves.
             </p>
           </div>
 
-          <div class="gallery__columns">
+          <div class="gallery__inner__columns">
             <div class="gallery-column gallery-column--slow gallery-column--up">
               <div class="gallery-column__viewport">
                 <div class="gallery-column__track">
@@ -969,9 +1081,400 @@
             </div>
           </div>
         </div> 
-        <img class="gallery__image" src="" alt="Surfing Instruction" />
+        <img
+          class="gallery__image"
+          src=""
+          alt="Surfer riding through bright ocean spray"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
      
       </section>
+
+      <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="testimonials__inner">
+          <div class="testimonials__inner__header">
+            <p class="section-kicker testimonials__inner__header__kicker">
+              <span class="testimonials__inner__header__kicker__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 5.6c-1.8-1.8-4.7-1.8-6.5 0L12 7.5l-1.9-1.9c-1.8-1.8-4.7-1.8-6.5 0s-1.8 4.7 0 6.5L12 20.5l8.4-8.4c1.8-1.8 1.8-4.7 0-6.5Z" />
+                </svg>
+              </span>
+              Testimonials
+            </p>
+            <h2 class="testimonials__inner__header__title" id="testimonials-title">
+              Riders' Words
+              <svg viewBox="0 0 390 76" aria-hidden="true" focusable="false">
+                <path d="M8 56C40 24 58 29 56 58C86 27 105 24 101 60C132 24 153 27 145 62C184 25 204 24 197 62C238 27 263 23 252 62C300 26 339 21 382 12" />
+              </svg>
+            </h2>
+            <p class="testimonials__inner__header__subtitle">Real stories from students who've paddled out, stood up, and fallen in love with the waves.</p>
+          </div>
+
+          <div class="testimonials__inner__grid" aria-label="Student testimonials">
+            <article class="testimonial-card testimonial-card--light">
+              <span class="testimonial-card__quote-mark" aria-hidden="true">”</span>
+              <p class="testimonial-card__quote">I never thought surfing could be this fun until these amazing instructors guided me patiently.</p>
+              <div class="testimonial-card__person">
+                <strong>Diego</strong>
+                <span>Brazil 🇧🇷</span>
+              </div>
+              <img class="testimonial-card__thumb" data-testimonial-image="0" alt="Surfer carving across a breaking wave." loading="lazy" width="720" height="260" />
+            </article>
+
+            <article class="testimonial-card testimonial-card--photo">
+              <img class="testimonial-card__background" data-testimonial-image="1" alt="Surfers walking along a beach at sunset." loading="lazy" width="720" height="720" />
+              <span class="testimonial-card__quote-mark" aria-hidden="true">”</span>
+              <p class="testimonial-card__quote">From my first paddle to my first wave, the team made every moment truly unforgettable.</p>
+              <div class="testimonial-card__person">
+                <strong>Sofia</strong>
+                <span>Spain 🇪🇸</span>
+              </div>
+            </article>
+
+            <article class="testimonial-card testimonial-card--light">
+              <span class="testimonial-card__quote-mark" aria-hidden="true">”</span>
+              <p class="testimonial-card__quote">I felt safe, supported, and inspired throughout my entire learning journey with this passionate crew.</p>
+              <div class="testimonial-card__person">
+                <strong>Jack</strong>
+                <span>Australia 🇦🇺</span>
+              </div>
+              <img class="testimonial-card__thumb" data-testimonial-image="2" alt="Smiling surfer holding a board near the ocean." loading="lazy" width="720" height="260" />
+            </article>
+
+            <article class="testimonial-card testimonial-card--photo testimonial-card--warm">
+              <img class="testimonial-card__background" data-testimonial-image="3" alt="Surfers sitting on boards during a warm sunset session." loading="lazy" width="720" height="720" />
+              <span class="testimonial-card__quote-mark" aria-hidden="true">”</span>
+              <p class="testimonial-card__quote">The instructors' energy and patience turned my nervousness into pure joy riding beautiful waves.</p>
+              <div class="testimonial-card__person">
+                <strong>Liam</strong>
+                <span>USA 🇺🇸</span>
+              </div>
+            </article>
+
+            <article class="testimonial-card testimonial-card--light">
+              <span class="testimonial-card__quote-mark" aria-hidden="true">”</span>
+              <p class="testimonial-card__quote">This surf school changed my life, giving me confidence and unforgettable memories.</p>
+              <div class="testimonial-card__person">
+                <strong>Emma</strong>
+                <span>UK 🇬🇧</span>
+              </div>
+              <img class="testimonial-card__thumb" data-testimonial-image="4" alt="Surfer cutting across bright blue water." loading="lazy" width="720" height="260" />
+            </article>
+
+            <article class="testimonial-card testimonial-card--photo testimonial-card--ocean">
+              <img class="testimonial-card__background" data-testimonial-image="5" alt="Aerial view of a surfer paddling through deep green ocean water." loading="lazy" width="720" height="720" />
+              <span class="testimonial-card__quote-mark" aria-hidden="true">”</span>
+              <p class="testimonial-card__quote">These coaches made learning easy, fun, and exciting while boosting my confidence in the ocean.</p>
+              <div class="testimonial-card__person">
+                <strong>Priya</strong>
+                <span>India 🇮🇳</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <img
+          class="testimonials__image"
+          src=""
+          alt="Happy surfer after a coaching session"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
+     
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="faq__inner">
+          <div class="faq__inner__header">
+            <p class="section-kicker faq__inner__header__kicker">
+              <span class="faq__inner__header__kicker__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M8 6h8" />
+                  <path d="M8 12h8" />
+                  <path d="M8 18h5" />
+                </svg>
+              </span>
+              FAQs
+            </p>
+            <h2 class="faq__inner__header__title" id="faq-title">Got Questions?</h2>
+            <p class="faq__inner__header__subtitle">
+              Everything you need to know before you grab your board and hit the waves.
+            </p>
+          </div>
+
+          <div class="faq__inner__list" role="list">
+            <article class="faq__inner__list__item is-open" data-faq-item>
+              <h3 class="faq-item__question">
+                <button
+                  class="faq-item__button"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-1"
+                  id="faq-trigger-1"
+                  data-faq-button
+                >
+                  <span>Do I need any surfing experience to join?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg class="faq-item__icon-plus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 5v14" />
+                      <path d="M5 12h14" />
+                    </svg>
+                    <svg class="faq-item__icon-minus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M5 12h14" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__content" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+                <p>Not at all! We welcome complete beginners and will guide you from your very first paddle to riding waves confidently.</p>
+              </div>
+            </article>
+
+            <article class="faq__inner__list__item" data-faq-item>
+              <h3 class="faq-item__question">
+                <button
+                  class="faq-item__button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-2"
+                  id="faq-trigger-2"
+                  data-faq-button
+                >
+                  <span>What should I bring to my surf lesson?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg class="faq-item__icon-plus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 5v14" />
+                      <path d="M5 12h14" />
+                    </svg>
+                    <svg class="faq-item__icon-minus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M5 12h14" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__content" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
+                <p>We provide boards and wetsuits. Just bring swimwear, sunscreen, a towel, and plenty of enthusiasm.</p>
+              </div>
+            </article>
+
+            <article class="faq__inner__list__item" data-faq-item>
+              <h3 class="faq-item__question">
+                <button
+                  class="faq-item__button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-3"
+                  id="faq-trigger-3"
+                  data-faq-button
+                >
+                  <span>Are lessons safe for kids?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg class="faq-item__icon-plus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 5v14" />
+                      <path d="M5 12h14" />
+                    </svg>
+                    <svg class="faq-item__icon-minus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M5 12h14" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__content" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
+                <p>Yes! We offer specially designed sessions for children, with extra safety measures and small student-to-instructor ratios.</p>
+              </div>
+            </article>
+
+            <article class="faq__inner__list__item" data-faq-item>
+              <h3 class="faq-item__question">
+                <button
+                  class="faq-item__button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-4"
+                  id="faq-trigger-4"
+                  data-faq-button
+                >
+                  <span>Can I book private lessons?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg class="faq-item__icon-plus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 5v14" />
+                      <path d="M5 12h14" />
+                    </svg>
+                    <svg class="faq-item__icon-minus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M5 12h14" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__content" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
+                <p>Absolutely. We offer both group and private coaching for individuals, friends, or families who want a personalized experience.</p>
+              </div>
+            </article>
+
+            <article class="faq__inner__list__item" data-faq-item>
+              <h3 class="faq-item__question">
+                <button
+                  class="faq-item__button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-5"
+                  id="faq-trigger-5"
+                  data-faq-button
+                >
+                  <span>How long is a typical lesson?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg class="faq-item__icon-plus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M12 5v14" />
+                      <path d="M5 12h14" />
+                    </svg>
+                    <svg class="faq-item__icon-minus" viewBox="0 0 24 24" focusable="false">
+                      <path d="M5 12h14" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__content" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5">
+                <p>Most sessions run for about 2 hours, giving you plenty of time to learn, practice, and have fun in the water.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <img
+          class="faq__image"
+          src=""
+          alt="Surfing hand sign above a sunny beach"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
+     
+      </section>
+
     </main>
+
+    <footer class="footer" id="contact">
+      <div class="hero-ticker footer-ticker" aria-label="Surf safety alerts" data-hero-ticker>
+        <div class="hero-ticker__track" data-hero-ticker-track>
+          <div class="hero-ticker__group" data-hero-ticker-group>
+            <span class="hero-ticker__item">
+              <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <circle cx="24" cy="24" r="18" />
+                <circle cx="24" cy="24" r="7" />
+                <path d="M12 12l8 8" />
+                <path d="M28 28l8 8" />
+                <path d="M36 12l-8 8" />
+                <path d="M20 28l-8 8" />
+              </svg>
+              SHARK SIGHTED
+            </span>
+            <span class="hero-ticker__item">
+              <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="M8 28c9-9 19-15 31-16-1 12-7 22-16 31l-3-12-12-3Z" />
+                <path d="M30 16l6-6" />
+                <circle cx="31" cy="22" r="3" />
+              </svg>
+              WARNING
+            </span>
+            <span class="hero-ticker__item">
+              <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="M24 7 44 41H4L24 7Z" />
+                <path d="M24 18v11" />
+                <path d="M24 35h.01" />
+              </svg>
+              NO SWIMMING
+            </span>
+            <span class="hero-ticker__item">
+              <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <circle cx="24" cy="24" r="18" />
+                <circle cx="24" cy="24" r="7" />
+                <path d="M12 12l8 8" />
+                <path d="M28 28l8 8" />
+                <path d="M36 12l-8 8" />
+                <path d="M20 28l-8 8" />
+              </svg>
+              SHARK SIGHTED
+            </span>
+            <span class="hero-ticker__item">
+              <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="M8 28c9-9 19-15 31-16-1 12-7 22-16 31l-3-12-12-3Z" />
+                <path d="M30 16l6-6" />
+                <circle cx="31" cy="22" r="3" />
+              </svg>
+              WARNING
+            </span>
+            <span class="hero-ticker__item">
+              <svg class="hero-ticker__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="M24 7 44 41H4L24 7Z" />
+                <path d="M24 18v11" />
+                <path d="M24 35h.01" />
+              </svg>
+              NO SWIMMING
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__inner">
+        <div class="footer__inner__brand">
+          <h2 class="footer__inner__brand__title">
+            SURF<span aria-hidden="true">*</span>ING
+          </h2>
+          <svg viewBox="0 0 320 38" aria-hidden="true" focusable="false">
+            <path d="M8 25C64 12 122 10 174 22C219 31 256 31 312 13" />
+            <path d="M34 31C95 20 143 20 186 27C229 34 267 33 302 22" />
+          </svg>
+        </div>
+
+        <nav class="footer__inner__nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#courses">Courses</a>
+          <a href="#locations">Locations</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQs</a>
+          <a href="#photos">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <hr>
+        <div class="footer__inner__meta">
+          <p>Ask AI About Surfing Institute</p>
+          <div class="footer__inner__icons" aria-hidden="true">
+            <img
+              class="footer-ai-icon"
+              src="https://framerusercontent.com/images/oJyzfq1e74tNH4sLUrPQ0HtAs.png"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="34"
+              height="34"
+            />
+            <img
+              class="footer-ai-icon"
+              src="https://framerusercontent.com/images/CRzkIQLRhIRR7ilps0eKyciD9g.png"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="34"
+              height="34"
+            />
+            <img
+              class="footer-ai-icon"
+              src="https://framerusercontent.com/images/po4QUsUAiRstx4uMhTDPG9IeFp8.png"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="34"
+              height="34"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

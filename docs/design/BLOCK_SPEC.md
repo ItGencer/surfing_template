@@ -1,6 +1,6 @@
 # Block Spec - Surfing Institute
 
-Оновлено: 2026-07-04.
+Оновлено: 2026-07-05.
 
 Це блокова специфікація сайту "Surfing Institute" для реалізації у `Surfing_template`. Джерело - доданий дизайн-промпт користувача.
 
@@ -336,80 +336,89 @@ Mobile behavior для цієї ітерації: hamburger menu з `aria-expand
   - mobile: 1 column.
   - avoid horizontal scroll.
 
+## Поточна задача: Testimonials - Riders' Words
+
+Джерело уточнення - скриншоти користувача з Testimonials block. Для цієї ітерації реалізується тільки Testimonials після Photos/Gallery, без зміни попередніх блоків.
+
+- Секція має `section#testimonials`, щоб існуючий nav link `Testimonials` працював.
+- Section header:
+  - label `Testimonials` з маленькою outline heart icon, centered, оранжевий;
+  - title `Riders' Words`, дуже великий чорний, centered;
+  - orange scribble stroke під словом/центром title, частково заходить на літери;
+  - subtitle: `Real stories from students who've paddled out, stood up, and fallen in love with the waves.`
+- Layout desktop:
+  - container `max-width ~1120-1200px`;
+  - grid 3 columns x 2 rows;
+  - gap `12-16px`, як на screenshot;
+  - cards мають однакову ширину, але можуть виглядати різними через photo background або thumbnail.
+- Card variants:
+  - Light card: white / very light background, `1px` border `#ECECEC`, radius `8-12px`, black quote text, orange quote mark, optional bottom thumbnail image.
+  - Photo card: image fills full card, dark gradient overlay, white quote mark/text/name/country.
+- Card content:
+  - quote mark `”` або paired quote glyph у top-left, `~34-42px`, orange on light cards, white on photo cards;
+  - quote text `~22-25px` desktop, bold, line-height `1.18-1.28`;
+  - author name `~15-17px`, bold/medium;
+  - country label + flag emoji inline;
+  - thumbnail on light cards: rounded image near bottom, height `120-150px`, full card width minus padding.
+- People and exact copy:
+  - Diego, Brazil 🇧🇷: `I never thought surfing could be this fun until these amazing instructors guided me patiently.`
+  - Sofia, Spain 🇪🇸: `From my first paddle to my first wave, the team made every moment truly unforgettable.`
+  - Jack, Australia 🇦🇺: `I felt safe, supported, and inspired throughout my entire learning journey with this passionate crew.`
+  - Liam, USA 🇺🇸: `The instructors' energy and patience turned my nervousness into pure joy riding beautiful waves.`
+  - Emma, UK 🇬🇧: `This surf school changed my life, giving me confidence and unforgettable memories.`
+  - Priya, India 🇮🇳: `These coaches made learning easy, fun, and exciting while boosting my confidence in the ocean.`
+- Responsive:
+  - tablet: 2 columns;
+  - mobile: 1 column;
+  - photo cards must keep readable contrast and no text/image overlap.
+
 ## 9. Testimonials - Riders' Words
 
-- Before section: full-bleed sky/person banner.
-- Section header:
-  - label `Testimonials`;
-  - title `Riders' Words`;
-  - subtitle `Real stories from students who've paddled out, stood up, and fallen in love with the waves.`
-- Grid:
-  - 3 columns x 2 rows desktop.
-  - Gap `~24px`.
-- Card variants:
-  - Light card: `#F7F7F6`, black text, orange quote icon.
-  - Photo card: background image with dark gradient, white text, white quote icon.
-- Card content:
-  - quote icon;
-  - quote `~16-18px`, bold, 2-3 lines;
-  - name `~15px`, bold;
-  - country + country code `~13px`;
-  - optional thumbnail at bottom, radius `8px`, height `130-150px`.
-- People:
-  - Diego, Brazil - `BR`.
-  - Sofia, Spain - `ES`.
-  - Jack, Australia - `AU`.
-  - Liam, USA - `US`.
-  - Emma, UK - `GB`.
-  - Priya, India - `IN`.
+- See current task above for implemented screenshot-like Testimonials grid.
 
 ## 10. FAQ - Got Questions?
 
-- Before section: full-bleed ocean/person-running-on-waves banner.
 - Section header:
   - label `FAQs`;
   - title `Got Questions?`;
   - subtitle `Everything you need to know before you grab your board and hit the waves.`
-- Accordion:
+- Accordion layout:
   - One column, `max-width ~900px`, centered.
-  - Item background `#F7F7F6`.
-  - Radius `12px`.
-  - Padding `24px 32px`.
-  - Gap `~16px`.
-  - Question text `~18px`, bold.
-  - Right button: orange circle `~32px`.
-  - Closed icon: `+`.
-  - Open icon: `x` or close icon.
-  - First item open by default.
-- Questions:
-  - `Do I need any surfing experience to join?`
-  - `What should I bring to my surf lesson?`
-  - `Are lessons safe for kids?`
+  - Each item uses a light card background `#F7F7F6` with a `12px` radius.
+  - Question text uses `18px`, bold, with a right-side toggle icon.
+  - The closed state shows a `+` SVG icon and the open state switches to a `−` SVG icon.
+  - The first item is open by default.
+- Content copy:
+  - `Do I need any surfing experience to join?` → `Not at all! We welcome complete beginners and will guide you from your very first paddle to riding waves confidently.`
+  - `What should I bring to my surf lesson?` → `We provide boards and wetsuits. Just bring swimwear, sunscreen, a towel, and plenty of enthusiasm.`
+  - `Are lessons safe for kids?` → `Yes! We offer specially designed sessions for children, with extra safety measures and small student-to-instructor ratios.`
+  - `Can I book private lessons?` → `Absolutely. We offer both group and private coaching for individuals, friends, or families who want a personalized experience.`
+  - `How long is a typical lesson?` → `Most sessions run for about 2 hours, giving you plenty of time to learn, practice, and have fun in the water.`
+- Interaction:
+  - Clicking a question toggles the answer open and closed.
+  - The button updates `aria-expanded` and the icon state for accessibility.
   - `Can I book private lessons?`
   - `How long is a typical lesson?`
 
 ## 11. Footer
 
-- Before footer: very tall full-bleed photo banner with shaka gesture, sand, sky, ocean.
-- Repeat Marquee Warning Ticker directly above footer.
+- Repeat the same warning marquee directly above the footer section.
+- Footer background: dark surf-inspired surface, with a bright orange accent for the brand mark and scribble underline.
 - Large decorative logo-title:
-  - `SURF*IING` or `SURF*ING` - `to confirm`.
-  - Black bold text.
+  - `SURF*ING` as the primary footer brand wordmark.
   - Orange asterisk/star.
   - Orange scribble underline.
-- Footer nav:
+- Footer nav links:
   - `About`;
   - `Courses`;
   - `Locations`;
   - `Why Us`;
   - `Testimonials`;
-  - `Instructors`;
+  - `FAQs`;
   - `Gallery`;
-  - `404`.
-- Divider line: `1px solid #ECECEC`.
-- Bottom attribution:
-  - Text: `Ask AI About [Ім'я автора]` - `to confirm`.
-  - 3 small AI-service style icons - exact icons `to confirm`.
+  - `Contact`.
+- Divider line: `1px solid rgba(255,255,255,0.16)`.
+- Bottom attribution: `Ask AI About Surfing Institute` with three small accent dots/icons.
 
 ## Responsive Notes
 

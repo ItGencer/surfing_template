@@ -1,6 +1,6 @@
 # Tasks
 
-Оновлено: 2026-07-04.
+Оновлено: 2026-07-05.
 
 ## Documentation
 
@@ -16,6 +16,7 @@
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під Hero Marquee Warning Ticker.
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний Courses sticky stack block.
 - [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний Beaches / Locations block.
+- [x] Оновити `docs/design/BLOCK_SPEC.md` під поточний Testimonials block.
 
 ## Completed This Iteration - Hero
 
@@ -63,6 +64,16 @@
 - [x] Додати responsive fallback: одна колонка на tablet/mobile без negative overlap і горизонтального скролу.
 - [x] Підключити локальні WebP assets через Webpack imports для location images без зовнішніх URL.
 
+
+## Completed This Iteration - Testimonials
+
+- [x] Реалізувати `section#testimonials` з label `Testimonials`, title `Riders' Words`, subtitle і оранжевим scribble underline.
+- [x] Додати 6 testimonial cards: Diego, Sofia, Jack, Liam, Emma, Priya.
+- [x] Зробити screenshot-like 3x2 desktop grid з light cards і photo-background cards.
+- [x] Додати quote marks, bold quote text, author/country з прапорами, thumbnails на light cards і gradient overlay на photo cards.
+- [x] Підключити локальні assets через Webpack imports для testimonial images без зовнішніх URL.
+- [x] Додати responsive fallback: 2 колонки на tablet, 1 колонка на mobile.
+
 ## To Confirm
 
 - [ ] Підтвердити, чи наступний крок - повна верстка сайту в цьому Webpack-проєкті.
@@ -86,9 +97,9 @@
 - [x] Реалізувати Locations masonry-like grid.
 - [x] Реалізувати Process grid `Beach to Board`.
 - [x] Реалізувати Photos block з трьома незалежними вертикальними каруселями.
-- [ ] Реалізувати Testimonials grid з light/photo-card варіантами.
-- [ ] Реалізувати FAQ accordion, перший пункт відкритий за замовчуванням.
-- [ ] Реалізувати footer з великим `SURF*IING/SURF*ING`, nav links і attribution row.
+- [x] Реалізувати Testimonials grid з light/photo-card варіантами.
+- [x] Реалізувати FAQ accordion, перший пункт відкритий за замовчуванням.
+- [x] Реалізувати footer з великим `SURF*ING`, nav links і attribution row.
 - [ ] Додати адаптивність для tablet/mobile.
 - [x] Додати manual QA screenshots у `docs/design/references/` після першої візуальної версії.
 
@@ -104,5 +115,5 @@
 - [x] Header не перекриває контент після переходу по anchors.
 - [x] Scroll progress bar рухається коректно.
 - [x] Hero marquee анімується плавно і не створює layout shift.
-- [ ] FAQ accordion доступний з клавіатури.
+- [x] FAQ accordion доступний з клавіатури.
 - [ ] Фото мають alt-тексти або декоративно приховані, якщо вони не несуть змісту.

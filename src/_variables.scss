@@ -1,0 +1,31 @@
+@use "sass:math";
+
+$colors: (
+  accent: #f5621e,
+  accent-strong: #ff6a00,
+  text: #111111,
+  muted: #6b6b6b,
+  card: #f7f7f6,
+  border: #ececec,
+  white: #ffffff,
+  overlay: rgba(0, 0, 0, 0.48),
+);
+
+$radius-card: 12px;
+$radius-image: 18px;
+$radius-pill: 999px;
+$container: 1280px;
+$header-container: 1080px;
+$header-height: 64px;
+$header-height-mobile: 62px;
+$ticker-height: 80px;
+$ticker-height-mobile: 64px;
+$section-stack-overlap: clamp(44px, 7vw, 116px);
+$footer-stack-overlap: clamp(72px, 10vw, 150px);
+$hero-bottom-overlay-height: math.percentage(math.div(34, 100));
+$font-display: "Arial Black", Impact, sans-serif;
+$font-body: Inter, "Helvetica Neue", Arial, sans-serif;
+$font-logo: "Space Mono", "Courier New", monospace;
+$duration-fast: 180ms;
+$duration-medium: 280ms;
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
