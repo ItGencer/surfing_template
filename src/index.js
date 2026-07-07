@@ -1,5 +1,4 @@
 import "./styles.scss";
-import heroImageUrl from "./assets/hero.jpg";
 import aboutImageUrl from "./assets/about.jpg";
 
 import courseImages1 from "./assets/courseImages1.webp";
@@ -12,167 +11,198 @@ import locationImages2 from "./assets/locationImages2.webp";
 import locationImages3 from "./assets/locationImages3.webp";
 import locationImages4 from "./assets/locationImages4.jpg";
 import locationImages5 from "./assets/locationImages5.jpg";
+
 import surfingImageUrl from "./assets/surfing.webp";
 import surfingTwoImageUrl from "./assets/surfing_2.webp";
 import surfingThreeImageUrl from "./assets/surfing_3.webp";
+import surfingThreeJpgUrl from "./assets/surfing-3.jpg";
+import surfingFourImageUrl from "./assets/surfing-4.jpg";
+import surfingFiveImageUrl from "./assets/surfing_5.webp";
 
-const courseImages = [courseImages1, courseImages2, courseImages3, courseImages4];
-const locationImages = [locationImages1, locationImages2, locationImages3, locationImages4, locationImages5];
-const galleryImages = [aboutImageUrl, locationImages1, locationImages2, locationImages3, surfingImageUrl, surfingTwoImageUrl, surfingThreeImageUrl];
-const testimonialImages = [courseImages3, surfingThreeImageUrl, courseImages1, locationImages5, courseImages2, locationImages2];
+const COURSE_IMAGES = [courseImages1, courseImages2, courseImages3, courseImages4];
+const LOCATION_IMAGES = [
+  locationImages1,
+  locationImages2,
+  locationImages3,
+  locationImages4,
+  locationImages5,
+];
+const GALLERY_IMAGES = [
+  aboutImageUrl,
+  locationImages1,
+  locationImages2,
+  locationImages3,
+  surfingImageUrl,
+  surfingTwoImageUrl,
+  surfingThreeImageUrl,
+];
+const TESTIMONIAL_IMAGES = [
+  courseImages3,
+  surfingThreeImageUrl,
+  courseImages1,
+  locationImages5,
+  courseImages2,
+  locationImages2,
+];
 
-const initImages = () => {
-  const aboutImage = document.querySelector("[data-about-image]");
-  const courseImageElements = document.querySelectorAll("[data-course-image]");
-  const locationImageElements = document.querySelectorAll("[data-location-image]");
-  const galleryImageElements = document.querySelectorAll("[data-gallery-image]");
-  const testimonialImageElements = document.querySelectorAll("[data-testimonial-image]");
+const SINGLE_IMAGES = [
+  { selector: "[data-about-image]", src: aboutImageUrl },
+  { selector: ".about__image", src: surfingImageUrl },
+  { selector: ".locations__image", src: surfingThreeJpgUrl },
+  { selector: ".courses__image", src: surfingTwoImageUrl },
+  { selector: ".process__image", src: surfingThreeImageUrl },
+  { selector: ".gallery__image", src: surfingThreeImageUrl },
+  { selector: ".testimonials__image", src: surfingFourImageUrl },
+  { selector: ".faq__image", src: surfingFiveImageUrl },
+];
 
-  if (aboutImage) {
-    aboutImage.src = aboutImageUrl;
+const INDEXED_IMAGE_GROUPS = [
+  { selector: "[data-course-image]", datasetKey: "courseImage", images: COURSE_IMAGES },
+  { selector: "[data-location-image]", datasetKey: "locationImage", images: LOCATION_IMAGES },
+  { selector: "[data-gallery-image]", datasetKey: "galleryImage", images: GALLERY_IMAGES },
+  {
+    selector: "[data-testimonial-image]",
+    datasetKey: "testimonialImage",
+    images: TESTIMONIAL_IMAGES,
+  },
+];
+
+class ImageHydrator {
+  constructor(singleImages, indexedImageGroups) {
+    this.singleImages = singleImages;
+    this.indexedImageGroups = indexedImageGroups;
   }
 
-  courseImageElements.forEach((image) => {
-    const imageUrl = courseImages[Number(image.dataset.courseImage || 0)];
+  init() {
+    this.hydrateSingleImages();
+    this.hydrateIndexedImages();
+  }
 
-    if (imageUrl) {
-      image.src = imageUrl;
-    }
-  });
-
-  locationImageElements.forEach((image) => {
-    const imageUrl = locationImages[Number(image.dataset.locationImage || 0)];
-
-    if (imageUrl) {
-      image.src = imageUrl;
-    }
-  });
-
-  galleryImageElements.forEach((image) => {
-    const index = Number(image.dataset.galleryImage || 0);
-    const imageUrl = galleryImages[index];
-
-    if (imageUrl) {
-      image.src = imageUrl;
-    }
-  });
-
-  testimonialImageElements.forEach((image) => {
-    const index = Number(image.dataset.testimonialImage || 0);
-    const imageUrl = testimonialImages[index];
-
-    if (imageUrl) {
-      image.src = imageUrl;
-    }
-  });
-};
-
-const initHeroTicker = () => {
-  const tickers = document.querySelectorAll("[data-hero-ticker]");
-
-  tickers.forEach((tickerRoot) => {
-    const track = tickerRoot.querySelector("[data-hero-ticker-track]");
-    const group = tickerRoot.querySelector("[data-hero-ticker-group]");
-
-    if (!track || !group) {
-      return;
-    }
-
-    if (!track.querySelector("[data-hero-ticker-clone]")) {
-      const clone = group.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      clone.dataset.heroTickerClone = "true";
-      track.appendChild(clone);
-    }
-
-    let isResizeTicking = false;
-
-    const updateTicker = () => {
-      const groupWidth = group.getBoundingClientRect().width;
-
-      if (groupWidth > 0) {
-        track.style.setProperty("--ticker-offset", `-${groupWidth}px`);
-        track.style.setProperty("--ticker-duration", `${Math.max(groupWidth / 85, 18).toFixed(2)}s`);
-      }
-
-      isResizeTicking = false;
-    };
-
-    const requestTickerUpdate = () => {
-      if (!isResizeTicking) {
-        window.requestAnimationFrame(updateTicker);
-        isResizeTicking = true;
-      }
-    };
-
-    window.addEventListener("resize", requestTickerUpdate);
-    updateTicker();
-  });
-};
-
-const initSurfingHero = () => {
-  const header = document.querySelector("[data-header]");
-  const progressBar = document.querySelector("[data-scroll-progress]");
-  const menuToggle = document.querySelector("[data-menu-toggle]");
-  const navPanel = document.querySelector("[data-nav-panel]");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  let isScrollTicking = false;
-
-  const updateScrollState = () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = scrollable > 0 ? Math.min(scrollTop / scrollable, 1) : 0;
-
-    if (progressBar) {
-      progressBar.style.transform = `scaleX(${progress})`;
-    }
-
-    if (header) {
-      header.classList.toggle("is-scrolled", scrollTop > 4);
-    }
-
-    isScrollTicking = false;
-  };
-
-  const requestScrollUpdate = () => {
-    if (!isScrollTicking) {
-      window.requestAnimationFrame(updateScrollState);
-      isScrollTicking = true;
-    }
-  };
-
-  const setMenuState = (isOpen) => {
-    if (!header || !menuToggle || !navPanel) {
-      return;
-    }
-
-    header.classList.toggle("is-menu-open", isOpen);
-    document.body.classList.toggle("nav-open", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-  };
-
-  const closeMenu = () => setMenuState(false);
-
-  const scrollToTarget = (target) => {
-    const headerHeight = header ? header.offsetHeight : 0;
-    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-    window.scrollTo({
-      top,
-      behavior: reducedMotion.matches ? "auto" : "smooth",
-    });
-  };
-
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      setMenuState(!isOpen);
+  hydrateSingleImages() {
+    this.singleImages.forEach(({ selector, src }) => {
+      const image = document.querySelector(selector);
+      this.setImageSource(image, src);
     });
   }
 
-  document.addEventListener("click", (event) => {
+  hydrateIndexedImages() {
+    this.indexedImageGroups.forEach(({ selector, datasetKey, images }) => {
+      document.querySelectorAll(selector).forEach((image) => {
+        const index = Number(image.dataset[datasetKey] || 0);
+        this.setImageSource(image, images[index]);
+      });
+    });
+  }
+
+  setImageSource(image, src) {
+    if (!image || !src) {
+      return;
+    }
+
+    image.src = src;
+  }
+}
+
+class HeroTicker {
+  constructor(root) {
+    this.root = root;
+    this.track = root.querySelector("[data-hero-ticker-track]");
+    this.group = root.querySelector("[data-hero-ticker-group]");
+    this.isResizeTicking = false;
+  }
+
+  init() {
+    if (!this.track || !this.group) {
+      return;
+    }
+
+    this.cloneGroup();
+    this.update();
+    window.addEventListener("resize", this.requestUpdate);
+  }
+
+  cloneGroup() {
+    if (this.track.querySelector("[data-hero-ticker-clone]")) {
+      return;
+    }
+
+    const clone = this.group.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.dataset.heroTickerClone = "true";
+    this.track.appendChild(clone);
+  }
+
+  requestUpdate = () => {
+    if (this.isResizeTicking) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => this.update());
+    this.isResizeTicking = true;
+  };
+
+  update() {
+    const groupWidth = this.group.getBoundingClientRect().width;
+
+    if (groupWidth > 0) {
+      this.track.style.setProperty("--ticker-offset", `-${groupWidth}px`);
+      this.track.style.setProperty(
+        "--ticker-duration",
+        `${Math.max(groupWidth / 85, 18).toFixed(2)}s`,
+      );
+    }
+
+    this.isResizeTicking = false;
+  }
+}
+
+class HeroTickerManager {
+  init() {
+    document
+      .querySelectorAll("[data-hero-ticker]")
+      .forEach((tickerRoot) => new HeroTicker(tickerRoot).init());
+  }
+}
+
+class HeaderNavigation {
+  constructor() {
+    this.header = document.querySelector("[data-header]");
+    this.progressBar = document.querySelector("[data-scroll-progress]");
+    this.menuToggle = document.querySelector("[data-menu-toggle]");
+    this.navPanel = document.querySelector("[data-nav-panel]");
+    this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    this.isScrollTicking = false;
+  }
+
+  init() {
+    this.bindMenuToggle();
+    this.bindDocumentEvents();
+    this.bindWindowEvents();
+    this.updateScrollState();
+  }
+
+  bindMenuToggle() {
+    if (!this.menuToggle) {
+      return;
+    }
+
+    this.menuToggle.addEventListener("click", () => {
+      const isOpen = this.menuToggle.getAttribute("aria-expanded") === "true";
+      this.setMenuState(!isOpen);
+    });
+  }
+
+  bindDocumentEvents() {
+    document.addEventListener("click", this.handleDocumentClick);
+    document.addEventListener("keydown", this.handleDocumentKeydown);
+  }
+
+  bindWindowEvents() {
+    window.addEventListener("resize", this.handleResize);
+    window.addEventListener("scroll", this.requestScrollUpdate, { passive: true });
+  }
+
+  handleDocumentClick = (event) => {
     const link = event.target.closest('a[href^="#"]');
 
     if (!link) {
@@ -188,46 +218,132 @@ const initSurfingHero = () => {
     const target = document.getElementById(hash.slice(1));
 
     if (!target) {
-      closeMenu();
+      this.closeMenu();
       return;
     }
 
     event.preventDefault();
-    closeMenu();
-    scrollToTarget(target);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) {
-      closeMenu();
-    }
-
-    requestScrollUpdate();
-  });
-
-  window.addEventListener("scroll", requestScrollUpdate, { passive: true });
-  updateScrollState();
-};
-
-const initAboutStats = () => {
-  const statValues = document.querySelectorAll("[data-stat-value]");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (!statValues.length) {
-    return;
-  }
-
-  const setFinalValue = (element) => {
-    element.textContent = `${element.dataset.count}${element.dataset.suffix || ""}`;
+    this.closeMenu();
+    this.scrollToTarget(target);
   };
 
-  const animateValue = (element) => {
+  handleDocumentKeydown = (event) => {
+    if (event.key === "Escape") {
+      this.closeMenu();
+    }
+  };
+
+  handleResize = () => {
+    if (window.innerWidth > 900) {
+      this.closeMenu();
+    }
+
+    this.requestScrollUpdate();
+  };
+
+  requestScrollUpdate = () => {
+    if (this.isScrollTicking) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => this.updateScrollState());
+    this.isScrollTicking = true;
+  };
+
+  updateScrollState() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? Math.min(scrollTop / scrollable, 1) : 0;
+
+    if (this.progressBar) {
+      this.progressBar.style.transform = `scaleX(${progress})`;
+    }
+
+    if (this.header) {
+      this.header.classList.toggle("is-scrolled", scrollTop > 4);
+    }
+
+    this.isScrollTicking = false;
+  }
+
+  setMenuState(isOpen) {
+    if (!this.header || !this.menuToggle || !this.navPanel) {
+      return;
+    }
+
+    this.header.classList.toggle("is-menu-open", isOpen);
+    document.body.classList.toggle("nav-open", isOpen);
+    this.menuToggle.setAttribute("aria-expanded", String(isOpen));
+    this.menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  }
+
+  closeMenu() {
+    this.setMenuState(false);
+  }
+
+  scrollToTarget(target) {
+    const headerHeight = this.header ? this.header.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    window.scrollTo({
+      top,
+      behavior: this.reducedMotion.matches ? "auto" : "smooth",
+    });
+  }
+}
+
+class CounterAnimator {
+  constructor(selector) {
+    this.values = document.querySelectorAll(selector);
+    this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    this.observer = null;
+  }
+
+  init() {
+    if (!this.values.length) {
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      this.values.forEach((element) => this.setFinalValue(element));
+      return;
+    }
+
+    this.observer = new IntersectionObserver(this.handleEntries, { threshold: 0.45 });
+    this.values.forEach((element) => this.observer.observe(element));
+  }
+
+  handleEntries = (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      this.revealValue(entry.target);
+      this.observer.unobserve(entry.target);
+    });
+  };
+
+  revealValue(element) {
+    if (element.dataset.countStarted === "true") {
+      return;
+    }
+
+    element.dataset.countStarted = "true";
+
+    if (this.reducedMotion.matches) {
+      this.setFinalValue(element);
+      return;
+    }
+
+    this.animateValue(element);
+  }
+
+  setFinalValue(element) {
+    element.textContent = `${element.dataset.count}${element.dataset.suffix || ""}`;
+  }
+
+  animateValue(element) {
     const target = Number(element.dataset.count || 0);
     const suffix = element.dataset.suffix || "";
     const duration = 900;
@@ -246,93 +362,91 @@ const initAboutStats = () => {
     };
 
     window.requestAnimationFrame(update);
-  };
+  }
+}
 
-  const revealValue = (element) => {
-    if (element.dataset.countStarted === "true") {
+class LocationsHeaderPin {
+  constructor() {
+    this.section = document.querySelector(".locations");
+    this.header = document.querySelector(".locations__inner__header");
+    this.grid = document.querySelector(".locations__inner__grid");
+    this.isTicking = false;
+  }
+
+  init() {
+    if (!this.section || !this.header || !this.grid) {
       return;
     }
 
-    element.dataset.countStarted = "true";
+    window.addEventListener("scroll", this.requestUpdate, { passive: true });
+    window.addEventListener("resize", this.requestUpdate);
+    this.update();
+  }
 
-    if (reducedMotion.matches) {
-      setFinalValue(element);
+  requestUpdate = () => {
+    if (this.isTicking) {
       return;
     }
 
-    animateValue(element);
+    window.requestAnimationFrame(() => this.update());
+    this.isTicking = true;
   };
 
-  if (!("IntersectionObserver" in window)) {
-    statValues.forEach(setFinalValue);
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          revealValue(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.45 },
-  );
-
-  statValues.forEach((element) => observer.observe(element));
-};
-
-const initLocationsHeaderPin = () => {
-  const section = document.querySelector(".locations");
-  const header = document.querySelector(".locations__header");
-  const grid = document.querySelector(".locations__grid");
-
-  if (!section || !header || !grid) {
-    return;
-  }
-
-  let isTicking = false;
-
-  const updateHeaderFade = () => {
+  update() {
     if (window.innerWidth <= 900) {
-      section.style.setProperty("--locations-header-opacity", "1");
-      isTicking = false;
+      this.section.style.setProperty("--locations-header-opacity", "1");
+      this.isTicking = false;
       return;
     }
 
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-    const gridTop = grid.getBoundingClientRect().top + window.scrollY;
+    const sectionTop = this.section.getBoundingClientRect().top + window.scrollY;
+    const gridTop = this.grid.getBoundingClientRect().top + window.scrollY;
     const scrollStart = Math.max(sectionTop + 80, gridTop - window.innerHeight * 0.62);
     const fadeDistance = Math.max(window.innerHeight * 0.58, 420);
     const progress = Math.min(Math.max((window.scrollY - scrollStart) / fadeDistance, 0), 1);
     const opacity = 1 - progress * 0.86;
 
-    section.style.setProperty("--locations-header-opacity", opacity.toFixed(3));
-    isTicking = false;
-  };
+    this.section.style.setProperty("--locations-header-opacity", opacity.toFixed(3));
+    this.isTicking = false;
+  }
+}
 
-  const requestHeaderFade = () => {
-    if (!isTicking) {
-      window.requestAnimationFrame(updateHeaderFade);
-      isTicking = true;
-    }
-  };
-
-  window.addEventListener("scroll", requestHeaderFade, { passive: true });
-  window.addEventListener("resize", requestHeaderFade);
-  updateHeaderFade();
-};
-
-const initFaqAccordion = () => {
-  const items = document.querySelectorAll("[data-faq-item]");
-
-  if (!items.length) {
-    return;
+class FaqAccordion {
+  constructor(selector) {
+    this.items = document.querySelectorAll(selector);
   }
 
-  const closeAll = () => {
-    items.forEach((item) => {
+  init() {
+    if (!this.items.length) {
+      return;
+    }
+
+    this.items.forEach((item) => this.bindItem(item));
+  }
+
+  bindItem(item) {
+    const button = item.querySelector("[data-faq-button]");
+
+    if (!button) {
+      return;
+    }
+
+    button.setAttribute("aria-expanded", String(item.classList.contains("is-open")));
+    button.addEventListener("click", () => this.toggleItem(item, button));
+  }
+
+  toggleItem(item, button) {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+    this.closeAll();
+
+    if (!isExpanded) {
+      item.classList.add("is-open");
+      button.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  closeAll() {
+    this.items.forEach((item) => {
       item.classList.remove("is-open");
       const button = item.querySelector("[data-faq-button]");
 
@@ -340,102 +454,24 @@ const initFaqAccordion = () => {
         button.setAttribute("aria-expanded", "false");
       }
     });
-  };
+  }
+}
 
-  items.forEach((item) => {
-    const button = item.querySelector("[data-faq-button]");
+class SurfingPage {
+  init() {
+    new ImageHydrator(SINGLE_IMAGES, INDEXED_IMAGE_GROUPS).init();
+    new HeroTickerManager().init();
+    new HeaderNavigation().init();
+    new CounterAnimator("[data-stat-value]").init();
+    new LocationsHeaderPin().init();
+    new FaqAccordion("[data-faq-item]").init();
+  }
+}
 
-    if (!button) {
-      return;
-    }
-
-    const isInitiallyOpen = item.classList.contains("is-open");
-
-    if (isInitiallyOpen) {
-      button.setAttribute("aria-expanded", "true");
-    } else {
-      button.setAttribute("aria-expanded", "false");
-    }
-
-    button.addEventListener("click", () => {
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-      closeAll();
-
-      if (!isExpanded) {
-        item.classList.add("is-open");
-        button.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
-};
-
-const initSurfingPage = () => {
-  initImages();
-  initHeroTicker();
-  initSurfingHero();
-  initAboutStats();
-  initLocationsHeaderPin();
-  initFaqAccordion();
-};
+const bootSurfingPage = () => new SurfingPage().init();
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initSurfingPage);
+  document.addEventListener("DOMContentLoaded", bootSurfingPage);
 } else {
-  initSurfingPage();
-}
-
-const imgAbout = document.querySelector(".about__image");
-if (imgAbout) {
-  const aboutImageUrl = new URL("./assets/surfing.webp", import.meta.url).href;
-
-  imgAbout.src = aboutImageUrl;
-}
-
-
-const imgAbout2 = document.querySelector(".locations__image");
-if (imgAbout2) {
-  const aboutImageUrl = new URL("./assets/surfing-3.jpg", import.meta.url).href;
-
-  imgAbout2.src = aboutImageUrl;
-}
-
-
-const imgAbout3 = document.querySelector(".course__image");
-if (imgAbout3) {
-  const aboutImageUrl = new URL("./assets/surfing_2.webp", import.meta.url).href;
-
-  imgAbout3.src = aboutImageUrl;
-}
-
-
-const imgAbout4 = document.querySelector(".process__image");
-if (imgAbout4) {
-  const aboutImageUrl = new URL("./assets/surfing_3.webp", import.meta.url).href;
-
-  imgAbout4.src = aboutImageUrl;
-}
-
-
-const imgAbout5 = document.querySelector(".gallery__image");
-if (imgAbout5) {
-  const aboutImageUrl = new URL("./assets/surfing_3.webp", import.meta.url).href;
-
-  imgAbout5.src = aboutImageUrl;
-}
-
-
-const imgAbout6 = document.querySelector(".testimonial-card__image");
-if (imgAbout6) {
-  const aboutImageUrl = new URL("./assets/surfing-4.jpg", import.meta.url).href;
-
-  imgAbout6.src = aboutImageUrl;
-}
-
-
-const imgAbout7 = document.querySelector(".faq__image");
-if (imgAbout7) {
-  const aboutImageUrl = new URL("./assets/surfing_5.webp", import.meta.url).href;
-
-  imgAbout7.src = aboutImageUrl;
+  bootSurfingPage();
 }
